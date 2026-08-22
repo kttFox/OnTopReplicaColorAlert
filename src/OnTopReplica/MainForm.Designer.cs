@@ -58,17 +58,17 @@
 			// menuContext
 			// 
 			this.menuContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuContextWindows,
-            this.switchToWindowToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.addPanelToolStripMenuItem,
-            this.menuContextClose,
-            this.toolStripSeparator2,
             this.selectRegionToolStripMenuItem,
             this.chromeToolStripMenuItem,
             this.menuContextOpacity,
             this.colorAlertToolStripMenuItem,
             this.advancedToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.menuContextWindows,
+            this.switchToWindowToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.addPanelToolStripMenuItem,
+            this.menuContextClose,
             this.toolStripSeparator1,
             this.pauseColorAlertAllPanelsToolStripMenuItem,
             this.settingsToolStripMenuItem,
