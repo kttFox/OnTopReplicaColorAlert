@@ -1,0 +1,293 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>OnTopReplicaColorAlert</AssemblyName>
+    <RootNamespace>OnTopReplicaColorAlert</RootNamespace>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <ApplicationIcon>new-flat-icon.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>Internet</TargetZone>
+    <StartupObject>OnTopReplicaColorAlert.Program</StartupObject>
+    <ExcludedPermissions></ExcludedPermissions>
+    <SignManifests>false</SignManifests>
+    <TargetFrameworkSubset></TargetFrameworkSubset>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Weeks</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://github.com/kttFox/OnTopReplicaColorAlert</SupportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>OnTopReplicaColorAlert</ProductName>
+    <PublisherName>kttFox</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AssemblyTitle>OnTopReplicaColorAlert</AssemblyTitle>
+    <Description>Always-on-top window monitor with color alert detection. Based on OnTopReplica by Lorenz Cuno Klopfenstein (Ms-RL).</Description>
+    <Company>kttFox</Company>
+    <Product>OnTopReplicaColorAlert</Product>
+    <Copyright>Copyright © kttFox 2026. Portions copyright © Lorenz Cuno Klopfenstein 2010 (Ms-RL).</Copyright>
+    <!-- CI では msbuild /p:Version=x.y.z で上書きされる -->
+    <Version>1.0.0</Version>
+    <!-- Application.ProductVersion に Git ハッシュを付けない -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants></DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>OnTopReplicaColorAlert.exe.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Sounds\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Update="AspectRatioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm_Features.cs" />
+    <Compile Update="MainForm_Gui.cs" />
+    <Compile Update="MainForm_MenuEvents.cs" />
+    <Compile Update="MainForm_ChildForms.cs" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="SidePanelContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StartupOptions\CommandLineReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HotKeyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ImageComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SidePanels\AboutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SidePanels\AboutPanelContents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SidePanels\ColorAlertPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SidePanels\OptionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <None Include="Native\ITaskBarList.cs" />
+    <Compile Update="SidePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <None Include="Native\CommonControls.cs" />
+    <Compile Update="FocusedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SidePanels\RegionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ThumbnailPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\flag_taiwan.png" />
+    <Content Include="Assets\flag_brazil.png" />
+    <Content Include="new-flat-icon.ico" />
+    <Content Include="Assets\xiao_arrow.png" />
+    <Content Include="Assets\icon-new.ico" />
+    <Content Include="Assets\screenshot-icon.ico" />
+    <Content Include="Assets\window_multiple16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Assets\icon.ico">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Assets\screenshot-icon.ico">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Assets\window_multiple16.ico">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Assets\xiao_arrow.png">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="cs\OnTopReplicaColorAlert.resources">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="da\OnTopReplicaColorAlert.resources">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="it\OnTopReplicaColorAlert.resources">
+      <Visible>False</Visible>
+      <Group></Group>
+      <TargetPath></TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Windows-Forms-Aero" Version="3.0.1" />
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
+    <Compile Remove="Native\ITaskBarList.cs" />
+    <Compile Remove="Native\CommonControls.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CREDITS.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="LICENSE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="AppStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.cs.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.da.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.de.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.es.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.fi.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.it.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.ja-JP.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.no.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.pl.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.pt-BR.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.pt.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.ru.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.tr.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.zh.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.zh-Hans.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.zh-TW.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <Compile Update="Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

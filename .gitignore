@@ -2,7 +2,7 @@
 **/bin/*
 **/obj/*
 **/publish/*
-Installer/OnTopReplica-Setup.exe
+Installer/OnTopReplicaColorAlert-Setup.exe
 src/Installer/output/*
 *.user
 *.suo

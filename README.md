@@ -1,87 +1,90 @@
-# OnTopReplica
+# OnTopReplicaColorAlert
 
-**A real-time always-on-top "replica" of a window of your choice, for Windows Vista, 7, 8, or 10.**
+[English](README_en.md)
 
-This simple utility application shows a blank always-on-top window by default.
-Users can pick any other window of the system to have an always up-to-date clone of the target window shown always-on-top.
-Very useful for monitoring background processes, wrangling with complex multi-window games or tools, watching YouTube videos while working, and so on.
+**任意のウィンドウを常に最前面へリアルタイム複製し、その中に指定した色が現れたらアラートを鳴らす Windows 向け監視ツール。**
 
-**📢 Features:**
+システム上の任意のウィンドウを選ぶと、そのウィンドウの常に最新のクローンが最前面に表示されます。
+主な用途は無人監視です。対象ウィンドウを特定の色(警告ランプ、エラー表示、制御画面のステータス LED など)で監視し、色が現れた瞬間 — あるいは消えた瞬間 — に音で知らせます。
 
-* Clone any of your windows and keep it *always-on-top* while working with other windows,
-* Color-alert feature lets you monitor a target window for a chosen color; open the **Color Alert** side panel, select a color and check "Enable Color Detection" (settings take effect immediately). If the monitored window contains the color, the alarm will sound for 3 seconds and an entry is written to the log.
-* Select a subregion of the cloned window, which:
-  * Can use relative coordinates from the target window's borders.
-* Position lock on any corner of your screen,
-* Adjustable opacity (10% steps),
-* "Click-through": makes the replica ignore any mouse interaction (turns **OnTopReplica** into an overlay if set together with partial opacity),
-* ~~"Group switch"-mode automatically switches through a group of windows while you use them.~~
+本アプリは [OnTopReplica](https://github.com/LorenzCK/OnTopReplica) のフォークとして始まり、現在は独自のアプリケーションとして分岐しています。機能はカラーアラート監視を中心に据え、オリジナルの機能のいくつかは削除しました(「削除した機能」を参照)。派生元とライセンスについては末尾の「派生元とライセンス」をご覧ください。
 
-## Fork changes
+**📢 主な機能:**
 
-### Multi-panel
+* 任意のウィンドウを複製し、他のウィンドウで作業しながら*常に最前面*に表示,
+* カラーアラート機能により、対象ウィンドウを指定した色で監視できます。**Color Alert** サイドパネルを開いて色を選択し、「色検出を有効にする」にチェックを入れてください(設定は即時反映されます)。監視対象のウィンドウに指定色が含まれると、アラームが3秒間鳴り、ログにエントリが記録されます。
+* 複製ウィンドウの一部領域(サブリージョン)を選択可能:
+  * 対象ウィンドウの枠からの相対座標を使用できます。
+* 不透明度の調整(10%刻み),
+* 「クリック透過」: 複製がマウス操作を一切受け付けなくなります(部分的な不透明度と併用すると **OnTopReplicaColorAlert** をオーバーレイとして使えます)。
 
-* Use **"Add Panel"** in the right-click menu to open any number of panels showing different regions of the same target window.
-  * The target window is always kept in sync with the main (primary) panel.
-  * Monitored region, color-alert settings, opacity, and window frame visibility are independent per panel.
+**🖱️ パネル上のマウス操作:**
 
-### Automatic layout save & restore
+| 操作 | 動作 |
+| --- | --- |
+| 右クリック | コンテキストメニューを開く |
+| ダブルクリック | **全パネル**のカラーアラートを一時停止 / 再開 |
+| 中クリック | **そのパネル**のカラーアラートを有効 / 無効 |
+| Ctrl + ドラッグ | 複製ウィンドウの領域を選択 |
 
-* The panel layout (target window, position, size, frame visibility, monitored region, color-alert settings) is **saved immediately on every change** and all panels are restored at the next startup (`PanelLayout.txt` in the same folder as the executable).
-* A resident watcher monitors the target window even if it is not yet running, and **automatically reconnects when it starts later** (the same applies if the target exits and restarts during a session).
+## 独自の機能
 
-### Color-alert enhancements
+### マルチパネル
 
-* Detection colors: in addition to the red, orange, and gray categories, you can specify a **custom color**. A sampling feature lets you pick a color by clicking any point on the screen (a cursor-following color preview is shown while sampling).
-* Added an option to sound the alarm when the detection color disappears.
-  You can set the number of consecutive misses required, to avoid false positives.
-* Color-alert monitoring can be **paused automatically while the target window is lost** (e.g. minimized or not yet running) and resumed when it comes back, avoiding spurious alarms (setting "Pause color alerts when the window is lost").
-* Alarm sounds: in addition to the bundled WAV/MP3 files (just drop files into the `Sounds` folder to add them to the list), some Windows system sounds can be selected.
-* Detection runs independently per panel.
-* Added the ability to send a single key to the monitored window when the alarm fires.
-* A **minimum detection pixel count** can be set per panel: the alarm only fires when at least the specified number of matching pixels is found. The current per-category detection counts are shown in real time on the panel (e.g. "Detecting: Red:12 Gray:340"), and a count-monitoring mode keeps updating the counts even while detection is disabled or paused (without firing alarms).
-* The paused state of color-alert monitoring is saved in the panel layout and restored at the next startup.
-* A small **status indicator (●)** is shown at the top-right of the preview so you can see at a glance whether color-alert monitoring is running (a different color is used while paused). Visibility, size, and colors are configurable in the settings panel.
+* 右クリックメニューの **「パネルを追加」** で、同じ対象ウィンドウの別領域を表示するパネルを何枚でも開けます。
+  * 対象ウィンドウはメイン(プライマリ)パネルと常に同期します。
+  * 監視領域・カラーアラート設定・不透明度・枠の有無はパネルごとに独立です。
 
-### Auto-hide
+### レイアウトの自動保存・復元
 
-* Added an option to **show/hide all panels in sync with the target window** (setting "Show/hide in sync with the cloned window", disabled by default): panels are hidden (without stealing focus) while the target window is inactive and shown again when it becomes active. This is also integrated with the target window's exit/start, so panels are hidden when the target exits and restored when it starts again. The taskbar button remains visible while hidden, so you can also restore the panels manually.
+* パネル構成(対象ウィンドウ・位置・サイズ・枠の有無・監視領域・カラーアラート設定)は**変更のたびに即時保存**され、次回起動時に全パネルが復元されます(実行ファイルと同じフォルダの `PanelLayout.txt`)。
+* 対象ウィンドウが起動していなくても常駐ウォッチャーが監視し、**後から起動された時点で自動的に再接続**します(セッション中に対象が終了→再起動した場合も同様)。
 
-### Other
+### カラーアラートの拡張
 
-* Removed the auto-update feature.
-* Application settings are now saved next to the executable (`OnTopReplica.Settings.xml`) instead of the per-user `user.config`, and are written immediately on every change.
-* Removed the MSI installer and made the application **portable** (just place the executable files and run).
-* Added a Japanese locale (translation resources).
-* Removed legacy settings such as "restore last window" and "restore previous position and size", which have been consolidated into the automatic layout restore described above.
-* Updated the target framework to .NET Framework 4.8.
+* 検出色: 赤・オレンジ・グレーのカテゴリに加え、**カスタム色**を指定できます。画面上の任意の点をクリックして色を取得するサンプリング機能付きです(サンプリング中はカーソル追従の色プレビューを表示)。
+* 検出色が消失時にアラームを鳴らす機能を追加しました。  
+誤検知回避のため、連続消失回数を指定できます。
+* 対象ウィンドウが失われている間(最小化中やまだ起動していない場合など)は、カラーアラート監視を**自動的に一時停止**し、対象が復帰すると再開できます。誤発報を防げます(設定「ウィンドウが失われたらカラーアラートを一時停止する」)。
+* 警報音: 同梱のWAV/MP3(`Sounds` フォルダにファイルを置くだけで選択肢に反映)に加え、一部のWindowsのシステムサウンドを選択できます。
+* 検出はパネルごとに独立して動作します。
+* アラーム発報時に監視対象ウィンドウへ単一キーを送信できる機能を追加しました。
+* パネルごとに**最小検出ピクセル数**を指定できます。一致ピクセルが指定数以上のときにのみアラームが発報します。カテゴリ別の検出ピクセル数はパネルに「検出中: 赤:12 グレー:340」の形式でリアルタイム表示され、カウント監視モードにより検出が無効・一時停止中でも検出数の更新を継続できます(監視のみの間はアラームは発報しません)。
+* カラーアラートの一時停止状態はパネルレイアウトに保存され、次回起動時に復元されます。
+* カラーアラート監視の実行状態がひと目で分かるよう、プレビュー右上に**実行状態インジケーター(●)**を表示します(一時停止中は別の色で表示)。表示の有無・大きさ・色は設定パネルで変更できます。
 
-## Requirements
 
-* Microsoft Windows Vista or greater (the application makes use of native DWM Thumbnails to create replicas),
-* Microsoft .NET Framework 4.8.
-* Desktop Composition (a.k.a. Windows *Aero*) enabled.
+### 自動非表示
 
-## Logging & Troubleshooting
+* **対象ウィンドウに連動して全パネルの表示/非表示を切り替える**機能を追加しました(設定「対象のウィンドウに連動して表示/非表示させる」、既定: 無効)。対象が非アクティブの間はフォーカスを奪わずにパネルを非表示にし、アクティブに戻ると再表示します。さらに対象ウィンドウの終了/起動とも連動し、対象が終了するとパネルを非表示にし、再び起動すると復帰します。非表示中もタスクバーボタンは残るため、手動で復帰することもできます。
 
-If the executable does not start when you double-click it, check for a log file in the same folder as the executable:
+### その他
 
-```
-<application folder>\lastrun.log.txt
-```
+* アプリケーション設定の保存先を、ユーザーごとの `user.config` から実行ファイルと同じフォルダの `OnTopReplicaColorAlert.Settings.xml` に変更しました(変更のたびに即時保存)。
+* 日本語ロケール(翻訳リソース)を追加しました。
+* 「最後のウィンドウを復元」「前回の位置とサイズを復元」等の旧設定は、上記のレイアウト自動復元に一本化して削除しました。
+* ターゲットフレームワークを .NET Framework 4.8 に更新しました。
 
-The program records startup details (version, command line, OS/CLR, current directory) and any exceptions. A crash dump (`OnTopReplica-dump-*.txt`) is written to the desktop if an unhandled exception occurs.
+## 削除した機能
 
-No log file at all usually means the process failed before the CLR loaded; verify that .NET Framework 4.8 (or later) is installed.
+オリジナルの OnTopReplica にあった機能のうち、本アプリでは削除したものです。
 
-## Installation
+* フルスクリーンモード(および専用のコンテキストメニュー),
+* 「クリック転送」(複製上のクリックを対象ウィンドウへ転送する機能),
+* グローバルホットキー(表示/非表示、現在のウィンドウを複製)とホットキー設定,
+* 「リサイズ」メニュー(元サイズ / 1/2 / 1/4)およびマウスホイールによるサイズ変更 — サイズ変更はウィンドウ枠のドラッグで行います,
+* 画面の隅への位置固定,
+* 「グループ切替」モード,
+* 自動アップデート機能と MSI インストーラ(本アプリはポータブル)。
 
-This fork is a **portable version**; there is no installer. Place the built executable files in any folder and run `OnTopReplica.exe`. See [BUILD_GUIDE.md](BUILD_GUIDE.md) and `build.ps1` for build instructions.
+## 動作要件
 
-The original version (MSI installer) is available from the [LorenzCK/OnTopReplica releases](https://github.com/LorenzCK/OnTopReplica/releases).
+* Microsoft Windows Vista 以降(複製の作成にネイティブの DWM サムネイルを使用します),
+* Microsoft .NET Framework 4.8。
+* デスクトップコンポジション(いわゆる Windows *Aero*)が有効であること。
 
-## Contributions
+## 派生元とライセンス
 
-…are very welcome. Fork away! 🍽️
+本アプリは Lorenz Cuno Klopfenstein 氏の [OnTopReplica](https://github.com/LorenzCK/OnTopReplica) から派生したもので、**Microsoft Reciprocal License (Ms-RL)** で配布されます([LICENSE](LICENSE) を参照)。ソースコードの一部の著作権は Lorenz Cuno Klopfenstein 氏に帰属します。
 
-Submitting [issues](https://github.com/kttFox/OnTopReplica/issues) and other feedback is also appreciated.
+本アプリは非公式のアプリケーションであり、OnTopReplica の作者とは無関係で、その承認も受けていません。

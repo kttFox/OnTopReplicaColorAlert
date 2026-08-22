@@ -1,0 +1,71 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'リリースタグ名 (例: v1.0.0)'
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  PROJECT: src/OnTopReplicaColorAlert/OnTopReplicaColorAlert.csproj
+  OUTPUT_DIR: publish
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Determine version
+        id: ver
+        shell: pwsh
+        run: |
+          $tag = if ('${{ github.event_name }}' -eq 'workflow_dispatch') { '${{ github.event.inputs.tag }}' } else { '${{ github.ref_name }}' }
+          $version = $tag -replace '^v', ''
+          if ($version -notmatch '^\d+(\.\d+){0,3}(-[0-9A-Za-z.-]+)?$') {
+            Write-Error "タグ '$tag' からバージョンを判定できません。v1.2.3 形式で付けてください。"
+            exit 1
+          }
+          "tag=$tag"         >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Restore
+        run: dotnet restore ${{ env.PROJECT }}
+
+      - name: Build (Release)
+        run: >
+          msbuild ${{ env.PROJECT }}
+          /p:Configuration=Release
+          /p:Platform=AnyCPU
+          /p:OutputPath=${{ github.workspace }}\${{ env.OUTPUT_DIR }}
+          /p:Version=${{ steps.ver.outputs.version }}
+          /m
+
+      - name: Create ZIP
+        id: zip
+        shell: pwsh
+        run: |
+          $name = "OnTopReplicaColorAlert-${{ steps.ver.outputs.tag }}.zip"
+          Get-ChildItem '${{ env.OUTPUT_DIR }}' -Include *.pdb -Recurse | Remove-Item -Force
+          Compress-Archive -Path '${{ env.OUTPUT_DIR }}\*' -DestinationPath $name -Force
+          "name=$name" >> $env:GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: ${{ steps.ver.outputs.tag }}
+          generate_release_notes: true
+          draft: false
+          files: ${{ steps.zip.outputs.name }}

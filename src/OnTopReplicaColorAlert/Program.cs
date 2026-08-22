@@ -1,0 +1,130 @@
+﻿using System;
+using System.IO;
+using System.Reflection;
+using System.Threading;
+using System.Windows.Forms;
+using OnTopReplicaColorAlert.Properties;
+using OnTopReplicaColorAlert.StartupOptions;
+
+namespace OnTopReplicaColorAlert {
+    
+    static class Program {
+
+        public static PlatformSupport Platform { get; private set; }
+
+        static MainForm _mainForm;
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main(string[] args) {
+            // early diagnostics: record environment even before AppPaths
+            try {
+                AppPaths.SetupPaths();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(string.Format("Unable to setup application folders: {0}", ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // nothing we can do
+            }
+
+            // log some basic environment info so we can diagnose silent failures
+            Log.Write("Launching OnTopReplicaColorAlert v.{0}", Application.ProductVersion);
+            Log.Write("Command line: {0}", Environment.CommandLine);
+            Log.Write("Working directory: {0}", Environment.CurrentDirectory);
+            Log.Write("OS: {0}", Environment.OSVersion);
+            Log.Write("CLR version: {0}", Environment.Version);
+            Log.Write("Args: {0}", string.Join(" ", args));
+
+            //Hook fatal abort handler
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
+            try {
+                //Initialize and check for platform support
+                Platform = PlatformSupport.Create();
+                if (!Platform.CheckCompatibility())
+                    return;
+                Platform.PreHandleFormInit();
+            }
+            catch (Exception ex) {
+                // log startup failure and notify user
+                Log.WriteException("Fatal startup exception", ex);
+                MessageBox.Show("OnTopReplicaColorAlert failed to start. See log file in " + AppPaths.PrivateRoamingFolderPath + " for details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Log.Write("Platform support initialized");
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            //Load startup options
+            var options = StartupOptions.Factory.CreateOptions(args);
+            string optionsMessage = options.DebugMessage;
+            if (!string.IsNullOrEmpty(optionsMessage)) { //show dialog if debug message present or if parsing failed
+                var dlg = new CommandLineReportForm(options.Status, optionsMessage);
+                dlg.ShowDialog();
+            }
+            if (options.Status == CliStatus.Information || options.Status == CliStatus.Error)
+                return;
+            
+            //Load language
+            Thread.CurrentThread.CurrentUICulture = Settings.Default.Language;
+
+            //Show form
+            using (_mainForm = new MainForm(options))
+            using (new NotificationIcon()) {
+                // if requested on command line, open the color alert panel immediately
+                if (args != null && Array.Exists(args, a => a.Equals("--showcoloralert", StringComparison.OrdinalIgnoreCase))) {
+                    _mainForm.SetSidePanel(new SidePanels.ColorAlertPanel());
+                }
+
+                Log.Write("Entering application loop");
+
+                //Enter GUI loop. The loop is not tied to the main form: it keeps running
+                //until the last panel window is closed (see MainForm.OnClosed), so that
+                //closing the primary panel does not terminate the remaining panels.
+                _mainForm.Show();
+                Application.Run(new ApplicationContext());
+
+                Log.Write("Persisting settings");
+                Settings.Default.Save();
+            }
+
+            Log.Write("Shutting down OnTopReplicaColorAlert");
+        }
+
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e) {
+            Log.WriteException("Unhandled exception", e.ExceptionObject as Exception);
+
+            string path = AppPaths.GenerateCrashDumpPath();
+
+            using (var s = new FileStream(path, FileMode.Create)) {
+                using (var sw = new StreamWriter(s)) {
+                    sw.WriteLine("OnTopReplicaColorAlert Dump file");
+                    sw.WriteLine("This file has been created because OnTopReplicaColorAlert crashed.");
+                    sw.WriteLine("Please send it to lck@klopfenstein.net to help fix the bug that caused the crash.");
+                    sw.WriteLine();
+
+                    sw.WriteLine("Last exception:");
+                    sw.WriteLine(e.ExceptionObject.ToString());
+                    sw.WriteLine();
+
+                    sw.WriteLine("Last log entries:");
+                    foreach (var logEntry in Log.Queue) {
+                        sw.WriteLine(logEntry);
+                    }
+                    sw.WriteLine();
+
+                    sw.WriteLine("OnTopReplicaColorAlert v.{0}", Application.ProductVersion);
+                    sw.WriteLine("OS: {0}", Environment.OSVersion.ToString());
+                    sw.WriteLine(".NET: {0}", Environment.Version.ToString());
+                    sw.WriteLine("DWM: {0}", WindowsFormsAero.OsSupport.IsCompositionEnabled);
+                    sw.WriteLine("Launch command: {0}", Environment.CommandLine);
+                    sw.WriteLine("UTC time: {0} {1}", DateTime.UtcNow.ToShortDateString(), DateTime.UtcNow.ToShortTimeString());
+                }
+            }
+        }
+
+    }
+}

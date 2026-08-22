@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutAuthor" xml:space="preserve">
+    <value>Автор: %.</value>
+    <comment>Link % is replaced by string AboutAuthorContent.</comment>
+  </data>
+  <data name="AboutAuthorContent" xml:space="preserve">
+    <value />
+    <comment>Must not be localized. Leave blank in non-default languages.</comment>
+  </data>
+  <data name="AboutContribute" xml:space="preserve">
+    <value>Хотите поддержать проект? Примите участие в улучшении готовых переводов, создайте свой на вашем родном языке или помогите улучшить % на «CodePlex».</value>
+  </data>
+  <data name="AboutContributeContent" xml:space="preserve">
+    <value>источниках кода</value>
+  </data>
+  <data name="AboutCreditsSources" xml:space="preserve">
+    <value>Программа основана на библиотеке «WindowsFormsAero» и некоторых других библиотеках и источниках кода. %.</value>
+    <comment>Link % is replaced by string AboutCreditsSourcesContent.</comment>
+  </data>
+  <data name="AboutCreditsSourcesContent" xml:space="preserve">
+    <value>Прочитайте полные сведения об источниках</value>
+  </data>
+  <data name="AboutDividerContribute" xml:space="preserve">
+    <value>Принять участие в разработке</value>
+  </data>
+  <data name="AboutDividerCredits" xml:space="preserve">
+    <value>Сведения об источниках</value>
+  </data>
+  <data name="AboutDividerLicense" xml:space="preserve">
+    <value>Соглашение</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+    <value>Программа выпущена в соответствии с лицензией %, которая подходит под определение программы с открытым исходом кодом в представлении OSI.</value>
+  </data>
+  <data name="AboutLicenseContent" xml:space="preserve">
+    <value />
+    <comment>Can be left blank.</comment>
+  </data>
+  <data name="AboutSlogan" xml:space="preserve">
+    <value>Просмотр части выбранного вами окна — просто и легко, в реальном времени, всегда поверх остальных окон.</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="AboutTranslators" xml:space="preserve">
+    <value>Переводчики: {0}</value>
+    <comment>{0} translators (do not end with period)</comment>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Версия {0}</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value />
+    <comment>Probably doesn't need localization. :)</comment>
+  </data>
+  <data name="ErrorDwmOff" xml:space="preserve">
+    <value>Композиция слоев рабочего стола недоступна.</value>
+  </data>
+  <data name="ErrorDwmOffContent" xml:space="preserve">
+    <value>Для включения правой кнопкой мыши по рабочему столу и выберите «Персонализацию».</value>
+  </data>
+  <data name="ErrorGenericInfoButton" xml:space="preserve">
+    <value>Описание ошибки</value>
+  </data>
+  <data name="ErrorGenericInfoText" xml:space="preserve">
+    <value>Ошибка:</value>
+  </data>
+  <data name="ErrorGenericThumbnailHandleError" xml:space="preserve">
+    <value>Вероятно, выбранное окно было закрыто или больше не отвечает.</value>
+  </data>
+  <data name="ErrorGenericTitle" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ErrorNoDwm" xml:space="preserve">
+    <value>Для запуска программы требуется «Windows Vista Home Premium» или другие версии «Windows» с поддержкой «Aero».</value>
+  </data>
+  <data name="ErrorNoDwmTitle" xml:space="preserve">
+    <value>Композиция слоев рабочего стола не поддерживается.</value>
+  </data>
+  <data name="ErrorNoThumbnail" xml:space="preserve">
+    <value>Окно просмотра не загружено.</value>
+  </data>
+  <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
+    <value>Невозможно создать окно просмотра.</value>
+  </data>
+  <data name="InfoClickThrough" xml:space="preserve">
+    <value>Включить режим сквозных щелчков мышью?</value>
+  </data>
+  <data name="InfoClickThroughContent" xml:space="preserve">
+    <value>Для возвращения в обычный режим воспользуйтесь командой отключения в меню значка OnTopReplicaColorAlert в области уведомлений.</value>
+  </data>
+  <data name="InfoClickThroughTitle" xml:space="preserve">
+    <value>Режим сквозных щелчков мышью</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>О программе...</value>
+  </data>
+  <data name="MenuAboutTT" xml:space="preserve">
+    <value>Сворачивает главное окно и показывает окно «О программе».</value>
+  </data>
+  <data name="MenuAdvanced" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="MenuChrome" xml:space="preserve">
+    <value>Показывать границу окна</value>
+  </data>
+  <data name="MenuChromeTT" xml:space="preserve">
+    <value>Изменяет видимость границы окна.</value>
+  </data>
+  <data name="MenuClickThrough" xml:space="preserve">
+    <value>Включить сквозные щелчки мышью</value>
+  </data>
+  <data name="MenuClickThroughTT" xml:space="preserve">
+    <value>Программа будет работать, как прозрачный слой, позволяющий щелкать мышью по нижележащим окнам.</value>
+  </data>
+  <data name="MenuClose" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="MenuClosePanel" xml:space="preserve">
+    <value>Закрыть панель...</value>
+  </data>
+  <data name="MenuOpacity" xml:space="preserve">
+    <value>Прозрачность</value>
+  </data>
+  <data name="MenuOpen" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="MenuOpenTT" xml:space="preserve">
+    <value>Показывает программу.</value>
+  </data>
+  <data name="MenuReduce" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="MenuReduceTT" xml:space="preserve">
+    <value>Сворачивает программу в панель задач (или лоток).</value>
+  </data>
+  <data name="MenuRegion" xml:space="preserve">
+    <value>Выбрать область...</value>
+  </data>
+  <data name="MenuRegionTT" xml:space="preserve">
+    <value>Переключается в «режим области», позволяющий выбирать для показа ограниченную область исходного окна.</value>
+  </data>
+  <data name="MenuSettings" xml:space="preserve">
+    <value>Настройки...</value>
+  </data>
+  <data name="MenuSettingsTT" xml:space="preserve">
+    <value>Показывает панель настроек.</value>
+  </data>
+  <data name="MenuSwitch" xml:space="preserve">
+    <value>Переключиться на окно</value>
+  </data>
+  <data name="MenuSwitchTT" xml:space="preserve">
+    <value>Переключается на исходное окно и скрывает программу.</value>
+  </data>
+  <data name="MenuWindows" xml:space="preserve">
+    <value>Выбрать окно</value>
+  </data>
+  <data name="MenuWindowsNone" xml:space="preserve">
+    <value>- пусто -</value>
+  </data>
+  <data name="MenuWindowsTT" xml:space="preserve">
+    <value>Показывает список окон, которые можно выбрать в качестве источников для копирования.</value>
+  </data>
+  <data name="MenuWindowsWholeRegion" xml:space="preserve">
+    <value>- полностью -</value>
+  </data>
+  <data name="RegionsCurrentRegion" xml:space="preserve">
+    <value>Выбранная область:</value>
+  </data>
+  <data name="RegionsDeleteButton" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="RegionsDoneButton" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="RegionsHeight" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="RegionsResetButton" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="RegionsSaveButton" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="RegionsStoredRegions" xml:space="preserve">
+    <value>Сохраненные области</value>
+  </data>
+  <data name="RegionsTitle" xml:space="preserve">
+    <value>Области:</value>
+  </data>
+  <data name="RegionsWidth" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="RightClick" xml:space="preserve">
+    <value>Для начала щелкните тут правой кнопкой мыши...</value>
+  </data>
+  <data name="SettingsLanguageTitle" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>Требуется перезапуск.</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+</root>
