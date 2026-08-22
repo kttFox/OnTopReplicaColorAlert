@@ -362,18 +362,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   <data name="RightClick" xml:space="preserve">
     <value>Hier rechtsklicken um zu beginnen...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Aktuelles Fenster klonen</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Diese Tastenkombinationen können auch benutzt werden, wenn OnTopReplica nicht das aktive Fenster ist.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Zeigen/Verstecken</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Tastenkombinationen:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Sprache:</value>
   </data>

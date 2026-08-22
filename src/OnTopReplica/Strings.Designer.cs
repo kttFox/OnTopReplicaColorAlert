@@ -1209,42 +1209,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Clone current window に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string SettingsHotKeyClone {
-            get {
-                return ResourceManager.GetString("SettingsHotKeyClone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   These system-wide shortcuts can also be used when OnTopReplica is not in focus. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string SettingsHotKeyDescription {
-            get {
-                return ResourceManager.GetString("SettingsHotKeyDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Show/Hide に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string SettingsHotKeyShowHide {
-            get {
-                return ResourceManager.GetString("SettingsHotKeyShowHide", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Hot keys: に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string SettingsHotKeyTitle {
-            get {
-                return ResourceManager.GetString("SettingsHotKeyTitle", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Auto hide: に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string SettingsAutoHideTitle {

@@ -350,18 +350,6 @@
   <data name="RightClick" xml:space="preserve">
     <value>右鍵開始…</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>監視目前視窗</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>系統全域快速鍵仍可以在 OnTopReplica 未啟動的時候使用。</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>顯示/隱藏</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>快速鍵：</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>語言：</value>
   </data>

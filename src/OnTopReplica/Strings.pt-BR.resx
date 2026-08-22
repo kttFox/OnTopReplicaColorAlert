@@ -366,18 +366,6 @@ Para retornar ao modo normal, use o comando de desativação no menu do ícone d
   <data name="RightClick" xml:space="preserve">
     <value>Clique com o botão direito para iniciar...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clonar janela atual</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Esses atalhos podem ser usados quando o OnTopReplica não está em foco.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Mostrar/Esconder</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Teclas de Atalho:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Idioma:</value>
   </data>

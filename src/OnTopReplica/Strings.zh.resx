@@ -425,18 +425,6 @@
   <data name="RightClick" xml:space="preserve">
     <value>右键开始…</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>监视当前窗口</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>系统端快捷键仍可以在OnTopReplica未激活的时候使用。</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>显示/隐藏</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>快捷键：</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>语言：</value>
   </data>

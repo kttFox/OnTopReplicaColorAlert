@@ -84,30 +84,6 @@ namespace OnTopReplica.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("[CTRL]+[SHIFT]+C")]
-        public string HotKeyCloneCurrent {
-            get {
-                return ((string)(this["HotKeyCloneCurrent"]));
-            }
-            set {
-                this["HotKeyCloneCurrent"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("[CTRL]+[SHIFT]+O")]
-        public string HotKeyShowHide {
-            get {
-                return ((string)(this["HotKeyShowHide"]));
-            }
-            set {
-                this["HotKeyShowHide"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool HideWhenSourceDeactivated {
             get {

@@ -357,18 +357,6 @@
   <data name="RightClick" xml:space="preserve">
     <value>Для начала щелкните тут правой кнопкой мыши...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Скопировать текущее окно</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Эти глобальные сочетания клавиш можно использовать также когда программа на заднем плане.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Показать/Скрыть</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Сочетания клавиш:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Язык:</value>
   </data>

@@ -366,18 +366,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="RightClick" xml:space="preserve">
     <value>Right-click here to start...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clone current window</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>These system-wide shortcuts can also be used when OnTopReplica is not in focus.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Show/Hide</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Hot keys:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Language:</value>
   </data>

@@ -362,18 +362,6 @@ Per tornare alla modalità normale, usa il comando di disattivazione nel menu de
   <data name="RightClick" xml:space="preserve">
     <value>Clic destro qui per iniziare...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clona finestra corrente</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Queste scorciatoie possono essere usate quando OnTopReplica non è attivo.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Nascondi</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Scorciatoie:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Lingua:</value>
   </data>

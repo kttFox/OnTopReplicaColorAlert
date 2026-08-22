@@ -362,18 +362,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   <data name="RightClick" xml:space="preserve">
     <value>Kliknij prawym tutaj aby rozpocząć...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Sklonuj bieżące okno</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Skróty klawiszowe działają również wtedy, gdy okno OnTopReplica nie jest aktywne.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Pokaż/Ukryj</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Klawisze skrótu:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Język:</value>
   </data>

@@ -362,18 +362,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   <data name="RightClick" xml:space="preserve">
     <value>Click derecho para empezar...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clona ventana actual</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Los atajos de teclado pueden ser utilizados aunque OnTopReplica no esté en primer plano.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Mostrar/ocultar</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Atajos de teclado:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Idioma:</value>
   </data>

@@ -19,7 +19,6 @@ namespace OnTopReplica.Platforms {
             //Do not show in task bar (the notification icon is now installed
             //globally by Program.Main on every platform)
             //NOTE: this effectively makes Windows ignore the Flip 3D policy set above (on Windows 7)
-            //NOTE: this also makes HotKey registration critically fail on Windows 7
             form.ShowInTaskbar = false;
 
             DwmManager.SetWindowFlip3dPolicy(form, WindowsFormsAero.Flip3DPolicy.ExcludeAbove);

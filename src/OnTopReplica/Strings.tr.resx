@@ -362,18 +362,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   <data name="RightClick" xml:space="preserve">
     <value>Başlamak için buraya sağ tıklayın...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Şu anki pencereyi klonla</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Bu sistem genelinde kısayollar ayrıca OnTopReplica üstte olmadığı zaman kullanılabilir.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Göster/Gizle</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Kısayollar:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Dil:</value>
   </data>

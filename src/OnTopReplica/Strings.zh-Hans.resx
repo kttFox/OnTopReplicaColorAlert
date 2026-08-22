@@ -428,18 +428,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="RightClick" xml:space="preserve">
     <value>点击右键以开始...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>克隆当前窗口</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>全局快捷键，前后台运行均会响应</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>显示/隐藏</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>快捷键：</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>语言：</value>
   </data>

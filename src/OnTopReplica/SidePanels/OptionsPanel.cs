@@ -20,11 +20,6 @@ namespace OnTopReplica.SidePanels {
             groupLanguage.Text = Strings.SettingsLanguageTitle;
             lblLanguage.Text = Strings.SettingsRestartRequired;
 
-            groupHotkeys.Text = Strings.SettingsHotKeyTitle;
-            lblHotKeyShowHide.Text = Strings.SettingsHotKeyShowHide;
-            lblHotKeyClone.Text = Strings.SettingsHotKeyClone;
-            label1.Text = Strings.SettingsHotKeyDescription;
-
             groupIndicator.Text = Strings.SettingsIndicatorTitle;
             checkIndicator.Text = Strings.SettingsIndicatorShow;
             lblIndicatorSize.Text = Strings.SettingsIndicatorSize;
@@ -42,11 +37,6 @@ namespace OnTopReplica.SidePanels {
             base.OnFirstShown(form);
 
             PopulateLanguageComboBox();
-
-            //Stop hotkey handling and load current shortcuts
-            form.MessagePumpManager.Get<OnTopReplica.MessagePumpProcessors.HotKeyManager>().Enabled = false;
-            txtHotKeyShowHide.Text = Settings.Default.HotKeyShowHide;
-            txtHotKeyClone.Text = Settings.Default.HotKeyCloneCurrent;
 
             //Load color alert indicator settings (events suppressed while loading)
             _loadingIndicatorSettings = true;
@@ -97,13 +87,6 @@ namespace OnTopReplica.SidePanels {
 
         public override void OnClosing(MainForm form) {
             base.OnClosing(form);
-
-            //Update hotkey settings and update processor
-            Settings.Default.HotKeyShowHide = txtHotKeyShowHide.Text;
-            Settings.Default.HotKeyCloneCurrent = txtHotKeyClone.Text;
-            var manager = form.MessagePumpManager.Get<OnTopReplica.MessagePumpProcessors.HotKeyManager>();
-            manager.RefreshHotkeys();
-            manager.Enabled = true;
         }
 
         #region Color alert indicator

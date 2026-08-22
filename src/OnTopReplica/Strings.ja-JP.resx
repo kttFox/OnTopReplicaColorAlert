@@ -440,18 +440,6 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="RightClick" xml:space="preserve">
     <value>右クリックしてウィンドウを選択します</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>現在のウィンドウを複製</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>システム全体のホットキーです。OnTopReplicaにフォーカスがなくても使用できます。</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>表示/隠す</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>ホットキー:</value>
-  </data>
   <data name="SettingsAutoHideTitle" xml:space="preserve">
     <value>自動非表示:</value>
   </data>

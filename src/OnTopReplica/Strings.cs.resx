@@ -362,18 +362,6 @@ K návratu do standardního režimu použijte příkaz pro vypnutí v nabídce i
   <data name="RightClick" xml:space="preserve">
     <value>Začněte klepnutím sem pravým tlačítkem myši...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Zavřít toto okno</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>Tyto klávesové zkratky jsou platné napříč systémem a je možné je použít i pokud OnTopReplica není aktivním oknem.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Zobrazit/Skrýt</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Klávesové zkratky:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Jazyk:</value>
   </data>

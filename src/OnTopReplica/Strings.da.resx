@@ -364,18 +364,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   <data name="RightClick" xml:space="preserve">
     <value>Højreklik her for at starte...</value>
   </data>
-  <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clone current window</value>
-  </data>
-  <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>These system-wide shortcuts can also be used when OnTopReplica is not in focus.</value>
-  </data>
-  <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Show/Hide</value>
-  </data>
-  <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Hot keys:</value>
-  </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
     <value>Language:</value>
   </data>

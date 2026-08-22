@@ -266,7 +266,7 @@ namespace OnTopReplica {
         #region Auto hide on source deactivation
 
         //True while the panel set is hidden because the cloned window lost focus
-        //(primary only). Distinct from manual hiding (hotkey/taskbar).
+        //(primary only). Distinct from manual hiding (taskbar icon).
         bool _autoHidden;
 
         /// <summary>
@@ -526,12 +526,6 @@ namespace OnTopReplica {
 
             MessagePumpManager.Dispose();
             Program.Platform.CloseForm(this);
-
-            //Global hotkeys were registered on this (closing) window and were just
-            //released by the manager dispose above: re-register on the new primary.
-            if (promoted != null && !promoted.IsDisposed) {
-                promoted.MessagePumpManager.Get<MessagePumpProcessors.HotKeyManager>().RefreshHotkeys();
-            }
         }
 
         protected override void OnClosed(EventArgs e) {
