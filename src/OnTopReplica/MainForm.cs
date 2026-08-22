@@ -158,6 +158,25 @@ namespace OnTopReplica {
             SetColorAlertPausedAllPanels(!IsColorAlertPausedAllPanels);
         }
 
+        /// <summary>
+        /// このパネルのカラーアラート検出の有効/無効を切り替える。
+        /// (一時停止とは別で、検出そのものの ON/OFF。このパネルのみが対象)
+        /// </summary>
+        public void ToggleColorAlertEnabled() {
+            try {
+                var proc = MessagePumpManager.Get<MessagePumpProcessors.ColorDetectionProcessor>();
+                proc.Enabled = !proc.Enabled;
+            }
+            catch {
+                return;
+            }
+
+            UpdateColorAlertIndicator();
+
+            //有効状態はレイアウトファイルに永続化される
+            NotifyPanelLayoutChanged();
+        }
+
         static void SetColorAlertPaused(MainForm panel, bool paused) {
             try {
                 var proc = panel.MessagePumpManager.Get<MessagePumpProcessors.ColorDetectionProcessor>();
@@ -688,6 +707,9 @@ namespace OnTopReplica {
             if (e.Button == System.Windows.Forms.MouseButtons.Right) {
                 OpenContextMenu(null);
             }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Middle) {
+                ToggleColorAlertEnabled();
+            }
         }
 
         private ThumbnailPanel.RegionDrawnHandler _quickRegionDrawingHandler;
@@ -728,6 +750,17 @@ namespace OnTopReplica {
                     //(the glass form translates client clicks into caption clicks)
                     if (m.WParam.ToInt32() == HT.CAPTION) {
                         ToggleColorAlertPaused();
+
+                        m.Result = IntPtr.Zero;
+                        return;
+                    }
+                    break;
+
+                case WM.NCMBUTTONUP:
+                    //Toggle this panel's color alert on middle click over the caption
+                    //(the glass form translates client clicks into caption clicks)
+                    if (m.WParam.ToInt32() == HT.CAPTION) {
+                        ToggleColorAlertEnabled();
 
                         m.Result = IntPtr.Zero;
                         return;
