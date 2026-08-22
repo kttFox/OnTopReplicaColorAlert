@@ -33,6 +33,14 @@ namespace OnTopReplicaColorAlert.Platforms {
             return (form.Opacity == 0.0);
         }
 
+        public override double GetVisibleOpacity(MainForm form) {
+            if (form.Opacity == 0.0) {
+                double previous;
+                return _previousOpacity.TryGetValue(form, out previous) ? previous : 1.0;
+            }
+            return form.Opacity;
+        }
+
         public override void RestoreForm(MainForm form) {
             if (form.Opacity == 0.0) {
                 double previous;

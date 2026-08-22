@@ -572,7 +572,8 @@ namespace OnTopReplicaColorAlert {
             tokens.Add("pos=" + panel.Location.X.ToString(inv) + "," + panel.Location.Y.ToString(inv));
             tokens.Add("size=" + panel.ClientSize.Width.ToString(inv) + "," + panel.ClientSize.Height.ToString(inv));
             tokens.Add("chrome=" + (panel.IsChromeVisible ? "1" : "0"));
-            tokens.Add("opacity=" + panel.Opacity.ToString("R", inv));
+            //隠されている(Opacity=0)パネルの見た目の値ではなく、表示時の透明度を保存する
+            tokens.Add("opacity=" + Program.Platform.GetVisibleOpacity(panel).ToString("R", inv));
             //Region (fall back to the last known region while no thumbnail is
             //shown: no window attached, or thumbnail dropped by a DWM error).
             //A region deliberately cleared by the user is also removed from the

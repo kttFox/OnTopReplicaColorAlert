@@ -83,6 +83,15 @@ namespace OnTopReplicaColorAlert {
         }
 
         /// <summary>
+        /// Gets the opacity the form shows when visible. Platforms that hide a form
+        /// by setting its opacity to zero return the value from before hiding, so
+        /// that a saved layout never records the hidden state.
+        /// </summary>
+        public virtual double GetVisibleOpacity(MainForm form) {
+            return form.Opacity;
+        }
+
+        /// <summary>
         /// Restores the main form to its default state after is has been hidden.
         /// Can be called whether the form is hidden or not.
         /// </summary>
