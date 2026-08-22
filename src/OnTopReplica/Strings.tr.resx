@@ -207,9 +207,6 @@ Bu programı Windows Vista Home Premium veya daha iyisinde çalıştırmalısın
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Pencereye oturtulamıyor.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Mod</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>"tıkla yönlendir"'i etkinleştirmek ister misiniz?</value>
     <comment>Should be capitalized?</comment>
@@ -272,9 +269,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Çift</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Tamekran</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Yarım</value>
   </data>
@@ -316,9 +310,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Sağ Üst</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Tamekran modundan çık</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Küçült</value>

@@ -211,9 +211,6 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Unable to fit window.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Mode</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Do you want to enable "click forwarding"?</value>
   </data>
@@ -275,9 +272,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Double</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Fullscreen</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Half</value>
   </data>
@@ -319,9 +313,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Top Right</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Quit fullscreen mode</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimize</value>

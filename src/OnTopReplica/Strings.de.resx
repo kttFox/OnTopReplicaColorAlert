@@ -207,9 +207,6 @@ Dieses Programm benötigt Windows Vista Home Premium oder besser.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Das Fenster passt nicht in das Vorschaufenster.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Mode</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Klickweiterleitung aktivieren?</value>
   </data>
@@ -271,9 +268,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Verdoppeln</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Vollbild</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Halbieren</value>
   </data>
@@ -315,9 +309,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Oben Rechts</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Vollbildmodus beenden</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimieren</value>

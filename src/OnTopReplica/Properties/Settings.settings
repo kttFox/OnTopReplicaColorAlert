@@ -20,17 +20,11 @@
     <Setting Name="FirstTimeClickForwarding" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="FullscreenAlwaysOnTop" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="HotKeyCloneCurrent" Type="System.String" Scope="User">
       <Value Profile="(Default)">[CTRL]+[SHIFT]+C</Value>
     </Setting>
     <Setting Name="HotKeyShowHide" Type="System.String" Scope="User">
       <Value Profile="(Default)">[CTRL]+[SHIFT]+O</Value>
-    </Setting>
-    <Setting Name="FullscreenMode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Standard</Value>
     </Setting>
     <Setting Name="HideWhenSourceDeactivated" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

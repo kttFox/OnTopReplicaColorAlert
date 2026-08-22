@@ -14,7 +14,7 @@ namespace OnTopReplica {
             if (position.HasValue)
                 menuPosition = position.Value;
 
-            var menu = FullscreenManager.IsFullscreen ? menuFullscreenContext : menuContext;
+            var menu = menuContext;
             //メニューを閉じて別ウィンドウがアクティブになると、パネルが最前面バンドの
             //背面に落ちることがあるため、閉じたタイミングで TopMost を再主張する。
             //(重複登録を避けるため一旦解除してから登録)
@@ -31,7 +31,7 @@ namespace OnTopReplica {
         /// フォーカスを奪わずに最前面(TOPMOST バンドの先頭)へ復帰させる。
         /// </summary>
         internal void ReassertTopMost() {
-            if (IsDisposed || !IsHandleCreated || FullscreenManager.IsFullscreen || !TopMost)
+            if (IsDisposed || !IsHandleCreated || !TopMost)
                 return;
 
             Native.WindowManagerMethods.SetWindowPos(Handle,
@@ -86,12 +86,9 @@ namespace OnTopReplica {
         }
 
         /// <summary>
-        /// Ensures that the main form is visible (either closing the fullscreen mode or reactivating from task icon).
+        /// Ensures that the main form is visible (reactivating from task icon).
         /// </summary>
         public void EnsureMainFormVisible() {
-            //Reset special modes
-            FullscreenManager.SwitchBack();
-
             //Restore all panels in a platform-dependent method
             RestoreAllPanels();
         }

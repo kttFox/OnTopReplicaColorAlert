@@ -272,9 +272,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>无法配对窗口。</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>模式</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>希望打开“点击转移”吗？</value>
   </data>
@@ -332,9 +329,6 @@
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 两倍</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>全屏</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 一半</value>
   </data>
@@ -376,9 +370,6 @@
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>右上</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>退出全屏模式</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>最小化</value>

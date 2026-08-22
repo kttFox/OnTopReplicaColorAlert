@@ -204,9 +204,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Невозможно уместить в окне.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Режим</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Хотите включить передачу щелчков мышью главному окну?</value>
   </data>
@@ -266,9 +263,6 @@
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Двойной</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Полноэкранный режим</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Половина</value>
   </data>
@@ -310,9 +304,6 @@
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Сверху справа</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Выйти из полноэкранного режима</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Свернуть</value>

@@ -207,9 +207,6 @@ Aplikacja działa na Windows Vista Home Premium i nowszych.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Nie można dopasować okna.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Tryb</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Czy uaktywnić "przekazywanie kliknięć"?</value>
   </data>
@@ -271,9 +268,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Podwójny</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Pełny ekran</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Połowa</value>
   </data>
@@ -315,9 +309,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Góra Prawo</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Wyjdź z trybu pełnoekranowego</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimalizuj</value>

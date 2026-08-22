@@ -96,18 +96,6 @@ namespace OnTopReplica.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool FullscreenAlwaysOnTop {
-            get {
-                return ((bool)(this["FullscreenAlwaysOnTop"]));
-            }
-            set {
-                this["FullscreenAlwaysOnTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("[CTRL]+[SHIFT]+C")]
         public string HotKeyCloneCurrent {
             get {
@@ -130,18 +118,6 @@ namespace OnTopReplica.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Standard")]
-        public string FullscreenMode {
-            get {
-                return ((string)(this["FullscreenMode"]));
-            }
-            set {
-                this["FullscreenMode"] = value;
-            }
-        }
-
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]

@@ -622,15 +622,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Mode に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string FullscreenMode {
-            get {
-                return ResourceManager.GetString("FullscreenMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Do you want to enable &quot;click forwarding&quot;? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string InfoClickForwarding {
@@ -914,15 +905,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Fullscreen に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuFitFullscreen {
-            get {
-                return ResourceManager.GetString("MenuFitFullscreen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   1:2 Half に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MenuFitHalf {
@@ -1045,15 +1027,6 @@ namespace OnTopReplica {
         internal static string MenuPosTopRight {
             get {
                 return ResourceManager.GetString("MenuPosTopRight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Quit fullscreen mode に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuQuitFullscreen {
-            get {
-                return ResourceManager.GetString("MenuQuitFullscreen", resourceCulture);
             }
         }
         

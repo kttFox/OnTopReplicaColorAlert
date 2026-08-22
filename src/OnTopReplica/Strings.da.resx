@@ -209,9 +209,6 @@ Dette program kræver Windows Vista Home Premium eller bedre.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Kunne ikke passes til vinduet.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Tilstande</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Ønsker du at aktivere "click forwarding"?</value>
   </data>
@@ -273,9 +270,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 dobbelt</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Fuld skærm</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 halv</value>
   </data>
@@ -317,9 +311,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Øverst højre</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Afslut fuldskærm tilstand.</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimer til systembakken.</value>

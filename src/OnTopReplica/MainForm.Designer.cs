@@ -31,7 +31,6 @@
 			this.menuContextWindows = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuWindows = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fullSelectWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.switchToWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			this.addPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +46,6 @@
 			this.fitToWindowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.halfToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.quarterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.fullscreenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.dockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.disabledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.topLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,9 +56,6 @@
 			this.colorAlertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pauseColorAlertAllPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.clickForwardingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.enableClickForwardingallPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.disableClickForwardingallPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clickThroughToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.enableClickThroughallPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.disableClickThroughallPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,20 +64,9 @@
 			this.reduceToIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuContextExit = new System.Windows.Forms.ToolStripMenuItem();
-			this.fullOpacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuFullscreenContext = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuModeStandardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuModeFullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuModeAllScreensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.enableClickthroughToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fullExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuContext.SuspendLayout();
 			this.MenuWindows.SuspendLayout();
 			this.menuResize.SuspendLayout();
-			this.menuFullscreenContext.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuContext
@@ -134,15 +117,6 @@
 			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
 			this.noneToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
 			this.noneToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuWindowsNone;
-			// 
-			// fullSelectWindowToolStripMenuItem
-			// 
-			this.fullSelectWindowToolStripMenuItem.DropDown = this.MenuWindows;
-			this.fullSelectWindowToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.list;
-			this.fullSelectWindowToolStripMenuItem.Name = "fullSelectWindowToolStripMenuItem";
-			this.fullSelectWindowToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.fullSelectWindowToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuWindows;
-			this.fullSelectWindowToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuWindowsTT;
 			// 
 			// switchToWindowToolStripMenuItem
 			// 
@@ -207,7 +181,6 @@
 			// menuOpacity
 			// 
 			this.menuOpacity.Name = "menuOpacity";
-			this.menuOpacity.OwnerItem = this.fullOpacityToolStripMenuItem;
 			this.menuOpacity.ShowCheckMargin = true;
 			this.menuOpacity.ShowImageMargin = false;
 			this.menuOpacity.Size = new System.Drawing.Size(61, 4);
@@ -227,9 +200,7 @@
             this.doubleToolStripMenuItem1,
             this.fitToWindowToolStripMenuItem1,
             this.halfToolStripMenuItem1,
-            this.quarterToolStripMenuItem1,
-            this.toolStripSeparator3,
-            this.fullscreenToolStripMenuItem1});
+            this.quarterToolStripMenuItem1});
 			this.menuResize.Name = "menuResize";
 			this.menuResize.OwnerItem = this.resizeToolStripMenuItem;
 			this.menuResize.Size = new System.Drawing.Size(165, 120);
@@ -262,19 +233,6 @@
 			this.quarterToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
 			this.quarterToolStripMenuItem1.Text = global::OnTopReplica.Strings.MenuFitQuarter;
 			this.quarterToolStripMenuItem1.Click += new System.EventHandler(this.Menu_Resize_Quarter);
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(161, 6);
-			// 
-			// fullscreenToolStripMenuItem1
-			// 
-			this.fullscreenToolStripMenuItem1.Image = global::OnTopReplica.Properties.Resources.fullscreen;
-			this.fullscreenToolStripMenuItem1.Name = "fullscreenToolStripMenuItem1";
-			this.fullscreenToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
-			this.fullscreenToolStripMenuItem1.Text = global::OnTopReplica.Strings.MenuFitFullscreen;
-			this.fullscreenToolStripMenuItem1.Click += new System.EventHandler(this.Menu_Resize_Fullscreen);
 			// 
 			// dockToolStripMenuItem
 			// 
@@ -352,9 +310,6 @@
 			// advancedToolStripMenuItem
 			// 
 			this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clickForwardingToolStripMenuItem,
-            this.enableClickForwardingallPanelsToolStripMenuItem,
-            this.disableClickForwardingallPanelsToolStripMenuItem,
             this.clickThroughToolStripMenuItem,
             this.enableClickThroughallPanelsToolStripMenuItem,
             this.disableClickThroughallPanelsToolStripMenuItem});
@@ -362,31 +317,6 @@
 			this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
 			this.advancedToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
 			this.advancedToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuAdvanced;
-			// 
-			// clickForwardingToolStripMenuItem
-			// 
-			this.clickForwardingToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.clickforwarding;
-			this.clickForwardingToolStripMenuItem.Name = "clickForwardingToolStripMenuItem";
-			this.clickForwardingToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
-			this.clickForwardingToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuClickForwarding;
-			this.clickForwardingToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuClickForwardingTT;
-			this.clickForwardingToolStripMenuItem.Click += new System.EventHandler(this.Menu_ClickForwarding_click);
-			// 
-			// enableClickForwardingallPanelsToolStripMenuItem
-			// 
-			this.enableClickForwardingallPanelsToolStripMenuItem.Name = "enableClickForwardingallPanelsToolStripMenuItem";
-			this.enableClickForwardingallPanelsToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
-			this.enableClickForwardingallPanelsToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuEnableClickForwardingAll;
-			this.enableClickForwardingallPanelsToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuEnableClickForwardingAllTT;
-			this.enableClickForwardingallPanelsToolStripMenuItem.Click += new System.EventHandler(this.Menu_EnableClickForwardingAll_click);
-			// 
-			// disableClickForwardingallPanelsToolStripMenuItem
-			// 
-			this.disableClickForwardingallPanelsToolStripMenuItem.Name = "disableClickForwardingallPanelsToolStripMenuItem";
-			this.disableClickForwardingallPanelsToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
-			this.disableClickForwardingallPanelsToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuDisableClickForwardingAll;
-			this.disableClickForwardingallPanelsToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuDisableClickForwardingAllTT;
-			this.disableClickForwardingallPanelsToolStripMenuItem.Click += new System.EventHandler(this.Menu_DisableClickForwardingAll_click);
 			// 
 			// clickThroughToolStripMenuItem
 			// 
@@ -461,92 +391,6 @@
 			this.menuContextExit.ToolTipText = global::OnTopReplica.Strings.MenuExitTT;
 			this.menuContextExit.Click += new System.EventHandler(this.Menu_Exit_click);
 			// 
-			// fullOpacityToolStripMenuItem
-			// 
-			this.fullOpacityToolStripMenuItem.DropDown = this.menuOpacity;
-			this.fullOpacityToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.window_opacity;
-			this.fullOpacityToolStripMenuItem.Name = "fullOpacityToolStripMenuItem";
-			this.fullOpacityToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.fullOpacityToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuOpacity;
-			// 
-			// menuFullscreenContext
-			// 
-			this.menuFullscreenContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fullSelectWindowToolStripMenuItem,
-            this.modeToolStripMenuItem,
-            this.fullOpacityToolStripMenuItem,
-            this.enableClickthroughToolStripMenuItem,
-            this.enableClickThroughallPanelsFullscreenToolStripMenuItem,
-            this.disableClickThroughallPanelsFullscreenToolStripMenuItem,
-            this.fullExitToolStripMenuItem});
-			this.menuFullscreenContext.Name = "menuFullscreenContext";
-			this.menuFullscreenContext.Size = new System.Drawing.Size(250, 158);
-			// 
-			// modeToolStripMenuItem
-			// 
-			this.modeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuModeStandardToolStripMenuItem,
-            this.menuModeFullscreenToolStripMenuItem,
-            this.menuModeAllScreensToolStripMenuItem});
-			this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
-			this.modeToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.modeToolStripMenuItem.Text = "Mode";
-			this.modeToolStripMenuItem.DropDownOpening += new System.EventHandler(this.Menu_Fullscreen_Mode_opening);
-			// 
-			// menuModeStandardToolStripMenuItem
-			// 
-			this.menuModeStandardToolStripMenuItem.Name = "menuModeStandardToolStripMenuItem";
-			this.menuModeStandardToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-			this.menuModeStandardToolStripMenuItem.Text = "Standard";
-			this.menuModeStandardToolStripMenuItem.Click += new System.EventHandler(this.Menu_Fullscreen_Mode_Standard_click);
-			// 
-			// menuModeFullscreenToolStripMenuItem
-			// 
-			this.menuModeFullscreenToolStripMenuItem.Name = "menuModeFullscreenToolStripMenuItem";
-			this.menuModeFullscreenToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-			this.menuModeFullscreenToolStripMenuItem.Text = "Fullscreen";
-			this.menuModeFullscreenToolStripMenuItem.Click += new System.EventHandler(this.Menu_Fullscreen_Mode_Fullscreen_click);
-			// 
-			// menuModeAllScreensToolStripMenuItem
-			// 
-			this.menuModeAllScreensToolStripMenuItem.Name = "menuModeAllScreensToolStripMenuItem";
-			this.menuModeAllScreensToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-			this.menuModeAllScreensToolStripMenuItem.Text = "All screens";
-			this.menuModeAllScreensToolStripMenuItem.Click += new System.EventHandler(this.Menu_Fullscreen_Mode_AllScreens_click);
-			// 
-			// enableClickthroughToolStripMenuItem
-			// 
-			this.enableClickthroughToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.clickforwarding;
-			this.enableClickthroughToolStripMenuItem.Name = "enableClickthroughToolStripMenuItem";
-			this.enableClickthroughToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.enableClickthroughToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuClickThrough;
-			this.enableClickthroughToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuClickThroughTT;
-			this.enableClickthroughToolStripMenuItem.Click += new System.EventHandler(this.Menu_ClickThrough_click);
-			// 
-			// enableClickThroughallPanelsFullscreenToolStripMenuItem
-			// 
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem.Name = "enableClickThroughallPanelsFullscreenToolStripMenuItem";
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuEnableClickThroughAll;
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuEnableClickThroughAllTT;
-			this.enableClickThroughallPanelsFullscreenToolStripMenuItem.Click += new System.EventHandler(this.Menu_EnableClickThroughAll_click);
-			// 
-			// disableClickThroughallPanelsFullscreenToolStripMenuItem
-			// 
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem.Name = "disableClickThroughallPanelsFullscreenToolStripMenuItem";
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuDisableClickThroughAll;
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem.ToolTipText = global::OnTopReplica.Strings.MenuDisableClickThroughAllTT;
-			this.disableClickThroughallPanelsFullscreenToolStripMenuItem.Click += new System.EventHandler(this.Menu_DisableClickThroughAll_click);
-			// 
-			// fullExitToolStripMenuItem
-			// 
-			this.fullExitToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.close_new;
-			this.fullExitToolStripMenuItem.Name = "fullExitToolStripMenuItem";
-			this.fullExitToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-			this.fullExitToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuQuitFullscreen;
-			this.fullExitToolStripMenuItem.Click += new System.EventHandler(this.Menu_Fullscreen_ExitFullscreen_click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -566,7 +410,6 @@
 			this.menuContext.ResumeLayout(false);
 			this.MenuWindows.ResumeLayout(false);
 			this.menuResize.ResumeLayout(false);
-			this.menuFullscreenContext.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
@@ -599,32 +442,16 @@
 		private System.Windows.Forms.ToolStripMenuItem fitToWindowToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem halfToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem quarterToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fullscreenToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem chromeToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip menuFullscreenContext;
-        private System.Windows.Forms.ToolStripMenuItem fullSelectWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fullOpacityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fullExitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clickForwardingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clickThroughToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enableClickthroughToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem centerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disabledToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuModeStandardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuModeFullscreenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuModeAllScreensToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem enableClickForwardingallPanelsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem disableClickForwardingallPanelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enableClickThroughallPanelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disableClickThroughallPanelsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enableClickThroughallPanelsFullscreenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem disableClickThroughallPanelsFullscreenToolStripMenuItem;
     }
 }
 

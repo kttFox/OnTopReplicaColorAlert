@@ -207,9 +207,6 @@ Es necesario utilizar Windows Vista o 7 en su versión Home Premium o superior.<
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Imposible adaptar la ventana.</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Modo</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Desea activar el "Click en la ventana clonada"?</value>
   </data>
@@ -271,9 +268,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Doble</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Pantalla completa</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Mitad</value>
   </data>
@@ -315,9 +309,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Arriba a la derecha</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Salir del modo pantalla completa</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimizar</value>

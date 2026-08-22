@@ -442,14 +442,12 @@ namespace OnTopReplica {
 
         //Managers
         WindowListMenuManager _windowListManager;
-        public FullscreenFormManager FullscreenManager { get; private set; }
 
         Options _startupOptions;
 
         public MainForm(Options startupOptions) {
             _startupOptions = startupOptions;
 
-            FullscreenManager = new FullscreenFormManager(this);
             _quickRegionDrawingHandler = HandleQuickRegionDrawn;
             
             //WinForms init pass
@@ -478,7 +476,7 @@ namespace OnTopReplica {
 
             //Set native renderer on context menus
             Asztal.Szótár.NativeToolStripRenderer.SetToolStripRenderer(
-                menuContext, MenuWindows, menuOpacity, menuResize, menuFullscreenContext
+                menuContext, MenuWindows, menuOpacity, menuResize
             );
 
             //Set to Key event preview
@@ -508,7 +506,7 @@ namespace OnTopReplica {
                 MessagePumpManager.Initialize(this);
                 _windowListManager = new WindowListMenuManager(this, MenuWindows) {
                     ParentMenus = new[] {
-                        menuContext, menuFullscreenContext
+                        menuContext
                     }
                 };
             }
@@ -692,39 +690,26 @@ namespace OnTopReplica {
 
             //HACK: sometimes, even if TopMost is true, the window loses its "always on top" status.
             //  This is a fix attempt that probably won't work...
-            if (!FullscreenManager.IsFullscreen) { //fullscreen mode doesn't use TopMost
-                TopMost = false;
-                TopMost = true;
+            TopMost = false;
+            TopMost = true;
 
-                //フォーカスを奪わずに最前面バンドの先頭へ確実に復帰させる。
-                //(TopMost 再設定だけでは順序が保証されない場合があるため)
-                //ここでインジケーターの Z オーダーも再同期される。
-                ReassertTopMost();
-            }
+            //フォーカスを奪わずに最前面バンドの先頭へ確実に復帰させる。
+            //(TopMost 再設定だけでは順序が保証されない場合があるため)
+            //ここでインジケーターの Z オーダーも再同期される。
+            ReassertTopMost();
         }
 
         protected override void OnMouseWheel(MouseEventArgs e) {
             base.OnMouseWheel(e);
 
-            if (!FullscreenManager.IsFullscreen) {
-                if (ThumbnailPanel.IsShowingThumbnail) {
-                    SetAspectRatio(ThumbnailPanel.ThumbnailPixelSize, false);
-                }
-
-                int change = (int)(e.Delta / 6.0); //assumes a mouse wheel "tick" is in the 80-120 range
-                AdjustSize(change);
-
-                RefreshScreenLock();
+            if (ThumbnailPanel.IsShowingThumbnail) {
+                SetAspectRatio(ThumbnailPanel.ThumbnailPixelSize, false);
             }
-        }
 
-        protected override void OnMouseDoubleClick(MouseEventArgs e) {
-            base.OnMouseDoubleClick(e);
+            int change = (int)(e.Delta / 6.0); //assumes a mouse wheel "tick" is in the 80-120 range
+            AdjustSize(change);
 
-            //This is handled by the WM_NCLBUTTONDBLCLK msg handler usually (because the GlassForm translates
-            //clicks on client to clicks on caption). But if fullscreen mode disables GlassForm dragging, we need
-            //this auxiliary handler to switch mode.
-            FullscreenManager.Toggle();
+            RefreshScreenLock();
         }
 
         protected override void OnMouseClick(MouseEventArgs e) {
@@ -769,16 +754,6 @@ namespace OnTopReplica {
                     }
                     break;
 
-                case WM.NCLBUTTONDBLCLK:
-                    //Toggle fullscreen mode if double click on caption (whole glass area)
-                    if (m.WParam.ToInt32() == HT.CAPTION) {
-                        FullscreenManager.Toggle();
-
-                        m.Result = IntPtr.Zero;
-                        return;
-                    }
-                    break;
-
                 case WM.NCHITTEST:
                     //Make transparent to hit-testing if in click through mode
                     if (ClickThroughEnabled) {
@@ -808,12 +783,7 @@ namespace OnTopReplica {
 
             //ALT
             if (e.Modifiers == Keys.Alt) {
-                if (e.KeyCode == Keys.Enter) {
-                    e.Handled = true;
-                    FullscreenManager.Toggle();
-                }
-
-                else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1) {
+                if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1) {
                     FitToThumbnail(0.25);
                 }
 
@@ -831,20 +801,10 @@ namespace OnTopReplica {
                 }
             }
 
-            //F11 Fullscreen switch
-            else if (e.KeyCode == Keys.F11) {
-                e.Handled = true;
-                FullscreenManager.Toggle();
-            }
-
             //ESCAPE
             else if (e.KeyCode == Keys.Escape) {
-                //Toggle fullscreen
-                if (FullscreenManager.IsFullscreen) {
-                    FullscreenManager.SwitchBack();
-                }
                 //Disable click forwarding
-                else if (ClickForwardingEnabled) {
+                if (ClickForwardingEnabled) {
                     ClickForwardingEnabled = false;
                 }
             }
@@ -881,8 +841,8 @@ namespace OnTopReplica {
                     return;
                 }
 
-                //Set aspect ratio (this will resize the form), do not refresh if in fullscreen
-                SetAspectRatio(ThumbnailPanel.ThumbnailPixelSize, !FullscreenManager.IsFullscreen);
+                //Set aspect ratio (this will resize the form)
+                SetAspectRatio(ThumbnailPanel.ThumbnailPixelSize, true);
             }
             catch (Exception ex) {
                 Log.WriteException("Unable to set new thumbnail", ex);

@@ -211,9 +211,6 @@ Você deve rodar essa aplicação em um Windows Vista Home Premium ou mais atual
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Impossível encaixar a janela</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>Modo</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>Você quer habilitar a função "click forwarding"?</value>
   </data>
@@ -275,9 +272,6 @@ Para retornar ao modo normal, use o comando de desativação no menu do ícone d
   <data name="MenuFitDouble" xml:space="preserve">
     <value>2:1 Dobro</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Tela Cheia</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>1:2 Metade</value>
   </data>
@@ -319,9 +313,6 @@ Para retornar ao modo normal, use o comando de desativação no menu do ícone d
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>Superior Direito</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Sair da Tela Cheia</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimizar</value>

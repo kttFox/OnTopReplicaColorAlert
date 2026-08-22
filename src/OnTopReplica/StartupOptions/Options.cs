@@ -18,7 +18,6 @@ namespace OnTopReplica.StartupOptions {
             Opacity = 255;
             DisableChrome = false;
             MustBeVisible = false;
-            Fullscreen = false;
         }
 
         #region Position and size
@@ -58,8 +57,6 @@ namespace OnTopReplica.StartupOptions {
         public byte Opacity { get; set; }
 
         public bool DisableChrome { get; set; }
-
-        public bool Fullscreen { get; set; }
 
         #endregion
 
@@ -178,11 +175,6 @@ namespace OnTopReplica.StartupOptions {
             //(a panel's OnShown runs these options after the layout was restored).
             if (DisableChrome) {
                 form.IsChromeVisible = false;
-            }
-
-            //Fullscreen
-            if (Fullscreen) {
-                form.FullscreenManager.SwitchFullscreen();
             }
         }
 

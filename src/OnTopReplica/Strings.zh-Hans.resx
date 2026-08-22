@@ -273,9 +273,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>无法适应窗口</value>
   </data>
-  <data name="FullscreenMode" xml:space="preserve">
-    <value>模式</value>
-  </data>
   <data name="InfoClickForwarding" xml:space="preserve">
     <value>您想启用“点击转发”吗？</value>
   </data>
@@ -337,9 +334,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="MenuFitDouble" xml:space="preserve">
     <value>200%</value>
   </data>
-  <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>全屏</value>
-  </data>
   <data name="MenuFitHalf" xml:space="preserve">
     <value>50%</value>
   </data>
@@ -381,9 +375,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
     <value>右上</value>
-  </data>
-  <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>退出全屏模式</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>最小化</value>

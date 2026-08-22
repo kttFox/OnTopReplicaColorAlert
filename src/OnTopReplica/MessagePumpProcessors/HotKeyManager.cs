@@ -149,8 +149,6 @@ namespace OnTopReplica.MessagePumpProcessors {
         /// between shown and hidden states.
         /// </summary>
         void HotKeyShowHideHandler() {
-            Form.FullscreenManager.SwitchBack();
-
             if (!Program.Platform.IsHidden(Form)) {
                 Form.HideAllPanels();
             }
