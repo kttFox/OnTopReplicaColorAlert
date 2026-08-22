@@ -243,7 +243,7 @@ Per tornare alla modalità normale, usa il comando di disattivazione nel menu de
     <value>Chiudi</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Chiudi pannello</value>
+    <value>Chiudi pannello...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opacità</value>

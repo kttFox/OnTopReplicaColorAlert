@@ -309,7 +309,7 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
     <value>退出</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>关闭面板</value>
+    <value>关闭面板...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>不透明度</value>

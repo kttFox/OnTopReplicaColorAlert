@@ -243,7 +243,7 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
     <value>Kapat</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Paneli kapat</value>
+    <value>Paneli kapat...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opaklık</value>

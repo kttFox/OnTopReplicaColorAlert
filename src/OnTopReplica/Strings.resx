@@ -324,8 +324,11 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="MenuClose" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="ConfirmClosePanel" xml:space="preserve">
+    <value>Close this panel?</value>
+  </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Close panel</value>
+    <value>Close panel...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opacity</value>

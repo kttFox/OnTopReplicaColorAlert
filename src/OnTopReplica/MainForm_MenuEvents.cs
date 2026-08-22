@@ -111,6 +111,12 @@ namespace OnTopReplica {
         }
 
         private void Menu_Close_click(object sender, EventArgs e) {
+            //Closing a panel is not undoable: ask for confirmation
+            var result = MessageBox.Show(this, Strings.ConfirmClosePanel, Strings.MenuClosePanel.TrimEnd('.'),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (result != DialogResult.Yes)
+                return;
+
             this.Close();
         }
 

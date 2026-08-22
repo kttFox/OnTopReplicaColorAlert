@@ -247,7 +247,7 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
     <value>Close</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Lukk panel</value>
+    <value>Lukk panel...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opacity</value>

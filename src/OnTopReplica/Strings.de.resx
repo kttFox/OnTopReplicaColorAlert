@@ -243,7 +243,7 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
     <value>Schliessen</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Panel schließen</value>
+    <value>Panel schließen...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Deckkraft</value>

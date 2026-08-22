@@ -320,8 +320,11 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="MenuClose" xml:space="preserve">
     <value>閉じる</value>
   </data>
+  <data name="ConfirmClosePanel" xml:space="preserve">
+    <value>このパネルを閉じますか?</value>
+  </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>このパネルを閉じる</value>
+    <value>このパネルを閉じる...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>不透明度</value>

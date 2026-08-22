@@ -741,6 +741,15 @@ namespace OnTopReplica {
         }
 
         /// <summary>
+        ///   Close this panel? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ConfirmClosePanel {
+            get {
+                return ResourceManager.GetString("ConfirmClosePanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Close panel に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MenuClosePanel {

@@ -243,7 +243,7 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
     <value>Zamknij</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Zamknij panel</value>
+    <value>Zamknij panel...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Przeźroczystość</value>

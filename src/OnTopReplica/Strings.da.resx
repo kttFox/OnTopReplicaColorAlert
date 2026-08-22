@@ -245,7 +245,7 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
     <value>Luk</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>Luk panel</value>
+    <value>Luk panel...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Uigennemsigtighed</value>

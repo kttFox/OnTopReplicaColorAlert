@@ -306,7 +306,7 @@
     <value>关闭</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>关闭面板</value>
+    <value>关闭面板...</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>透明度</value>
