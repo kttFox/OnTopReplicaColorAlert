@@ -321,7 +321,7 @@ You must run this application on Windows Vista Home Premium or better.</value>
     <value>閉じる</value>
   </data>
   <data name="MenuClosePanel" xml:space="preserve">
-    <value>パネルを閉じる</value>
+    <value>このパネルを閉じる</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>不透明度</value>
