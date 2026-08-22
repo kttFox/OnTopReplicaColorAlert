@@ -73,16 +73,6 @@ namespace OnTopReplica.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap clickforwarding {
-            get {
-                object obj = ResourceManager.GetObject("clickforwarding", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap close_new {
             get {
                 object obj = ResourceManager.GetObject("close_new", resourceCulture);

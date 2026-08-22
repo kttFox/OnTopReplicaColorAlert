@@ -211,17 +211,6 @@ Você deve rodar essa aplicação em um Windows Vista Home Premium ou mais atual
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Impossível encaixar a janela</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Você quer habilitar a função "click forwarding"?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>Se essa função estiver ativada, OnTopReplica irá repassar todos os cliques do mouse (isso permite que você mude as configurações do OnTopReplica sem precisar ativa-lo).
-
-Para desativar esse modo, use o menu do ícone da bandeja do sistema.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Click forwarding</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Habilitar 'Click-Through'?</value>
   </data>
@@ -250,12 +239,6 @@ Para retornar ao modo normal, use o comando de desativação no menu do ícone d
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Alterna a exibição da borda da janela.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Habilita 'Click forwarding'</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Habilita 'click forwarding' na janela clonada.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Habilita 'Click-Through'</value>

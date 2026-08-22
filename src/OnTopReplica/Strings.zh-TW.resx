@@ -197,15 +197,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>無法配對視窗。</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>希望打開「點擊轉移」嗎？</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>如果該模式啟用，OnTopReplica將會把所有的滑鼠點擊事件轉移到所監視的視窗（這將可以讓你通過OnTopReplica來操作監視的視窗而不用切換到它）。退出該模式請使用工作列系統匣圖示的選單。</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>點擊轉移</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>打開點擊穿透模式？</value>
   </data>
@@ -232,12 +223,6 @@
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>切換是否顯示視窗邊緣。</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>打開點擊轉移</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>對監視的視窗打開點擊轉移。</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>打開點擊穿透</value>

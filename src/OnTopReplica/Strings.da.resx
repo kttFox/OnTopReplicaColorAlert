@@ -209,17 +209,6 @@ Dette program kræver Windows Vista Home Premium eller bedre.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Kunne ikke passes til vinduet.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Ønsker du at aktivere "click forwarding"?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>Hvis denne funktion er aktiveret vil OnTopReplica vidersende alle venstr museklik til det klonede vindue (dette gør dig i stand til at udføre basis musefunktioner i det klonede vindue uden at skulle aktivere det).
-
-For at afslutte denne funktion skal du bruge menuen på ikonet i proceslinjens meddelelsesområde.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Click forwarding</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Ønskes gennem klik i fuldskærms tilstand?</value>
   </data>
@@ -248,12 +237,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Vælger Chrome kanten rundt om vinduet til/fra</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Click forwarding</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Aktiver "click forwarding" til det klonede vindue</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Klikke igennem</value>

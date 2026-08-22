@@ -204,17 +204,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Невозможно уместить в окне.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Хотите включить передачу щелчков мышью главному окну?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>Для выхода из этого режима используйте меню значка в области уведомлений.</value>
-    <comment>There appears to be a missing part.</comment>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Передача щелчков мышью главному окну.</value>
-    <comment>This appears to be wrong.</comment>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Включить режим сквозных щелчков мышью?</value>
   </data>
@@ -241,12 +230,6 @@
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Изменяет видимость границы окна.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Включить передачу щелчков мышью главному окну</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Включить передачу щелчков мышью скопированному окну.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Включить сквозные щелчки мышью</value>

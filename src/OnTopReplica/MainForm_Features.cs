@@ -9,42 +9,6 @@ namespace OnTopReplica {
     //Contains some feature implementations of MainForm
     partial class MainForm {
 
-        #region Click forwarding
-
-        public bool ClickForwardingEnabled {
-            get {
-                return ThumbnailPanel.ReportThumbnailClicks;
-            }
-            set {
-                if (value && Settings.Default.FirstTimeClickForwarding) {
-                    if (!ConfirmFirstTimeClickForwarding())
-                        return;
-                }
-
-                ThumbnailPanel.ReportThumbnailClicks = value;
-            }
-        }
-
-        /// <summary>
-        /// Shows the one-time click-forwarding confirmation dialog (if not already shown/dismissed)
-        /// and persists that it has been shown. Returns false if the user declined.
-        /// </summary>
-        bool ConfirmFirstTimeClickForwarding() {
-            if (!Settings.Default.FirstTimeClickForwarding)
-                return true;
-
-            TaskDialog dlg = new TaskDialog(Strings.InfoClickForwarding, Strings.InfoClickForwardingTitle, Strings.InfoClickForwardingContent) {
-                CommonButtons = CommonButton.Yes | CommonButton.No
-            };
-            if (dlg.Show(this).CommonButton == CommonButtonResult.No)
-                return false;
-
-            Settings.Default.FirstTimeClickForwarding = false;
-            return true;
-        }
-
-        #endregion
-
         #region Click-through
 
         bool _clickThrough = false;

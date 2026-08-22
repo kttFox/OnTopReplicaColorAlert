@@ -207,17 +207,6 @@ Es necesario utilizar Windows Vista o 7 en su versión Home Premium o superior.<
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Imposible adaptar la ventana.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Desea activar el "Click en la ventana clonada"?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>Si este modo está activado, OnTopReplica permitirá hacer click en la ventana clonada (de esta forma se podrán hacer operaciones básicas con el ratón sin tener que activar la ventana original).
-
-Para salir de este modo, use el menú del icono de la bandeja del sistema.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Click en la ventana clonada</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Activar el modo Click a través?</value>
   </data>
@@ -246,12 +235,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Activa o desactiva el marco de la ventana.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Activar Click en la ventana clonada</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Activa "Click en la ventana clonada" en la ventana que se ha clonado.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Activar Click a través</value>

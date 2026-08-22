@@ -84,18 +84,6 @@ namespace OnTopReplica.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstTimeClickForwarding {
-            get {
-                return ((bool)(this["FirstTimeClickForwarding"]));
-            }
-            set {
-                this["FirstTimeClickForwarding"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("[CTRL]+[SHIFT]+C")]
         public string HotKeyCloneCurrent {
             get {

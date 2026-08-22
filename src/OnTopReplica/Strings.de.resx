@@ -207,17 +207,6 @@ Dieses Programm benötigt Windows Vista Home Premium oder besser.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Das Fenster passt nicht in das Vorschaufenster.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Klickweiterleitung aktivieren?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>OnTopReplica wird alle Linksklicks an das geklonte Fenster weiterreichen (dies erlaubt simple Interaktion ohne das andere Fenster zu aktivieren).
-
-Um diesen Modus zu beenden, das Menü des Taskleisten-Symbols verwenden.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Klickweiterleitung</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Durchklickmodus aktivieren?</value>
   </data>
@@ -246,12 +235,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Schaltet den Fensterrahmen an und aus.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Klickweiterleitung aktivieren</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Leitet klicks an das geklonte Fenster weiter.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Durchklicken aktivieren</value>

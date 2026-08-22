@@ -50,8 +50,6 @@ namespace OnTopReplica.StartupOptions {
 
         #region Options
 
-        public bool EnableClickForwarding { get; set; }
-
         public bool EnableClickThrough { get; set; }
 
         public byte Opacity { get; set; }
@@ -163,9 +161,6 @@ namespace OnTopReplica.StartupOptions {
             }
 
             //Other features
-            if (EnableClickForwarding) {
-                form.ClickForwardingEnabled = true;
-            }
             if (EnableClickThrough) {
                 form.ClickThroughEnabled = true;
             }

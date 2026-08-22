@@ -273,18 +273,6 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Unable to fit window.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>クリック転送を有効にしますか？</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>このモードが有効な場合、マウスの左クリックを複製したウィンドウに転送します。
-(複製したウィンドウをアクティブにすることなく、OnTopReplica上で基本的なマウス操作を行うことができます。)
-
-このモードを解除するには、通知領域（システムトレイ）の OnTopReplica アイコンのメニューから解除してください。</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>クリック転送</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>クリック透過モードを有効にしますか？</value>
   </data>
@@ -314,29 +302,11 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>ウィンドウ枠表示の切り替え</value>
   </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>クリック転送を有効</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>OnTopReplica上でのクリックを複製元のウィンドウへ転送します</value>
-  </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>クリック透過を有効</value>
   </data>
   <data name="MenuClickThroughTT" xml:space="preserve">
     <value>ウィンドウを透過してクリックします (OnTopReplicaの下にあるウィンドウへクリックを通します)</value>
-  </data>
-  <data name="MenuEnableClickForwardingAll" xml:space="preserve">
-    <value>すべてのパネルでクリック転送を有効</value>
-  </data>
-  <data name="MenuEnableClickForwardingAllTT" xml:space="preserve">
-    <value>このパネルセット内のすべてのパネルでクリック転送を有効にします</value>
-  </data>
-  <data name="MenuDisableClickForwardingAll" xml:space="preserve">
-    <value>すべてのパネルでクリック転送を解除</value>
-  </data>
-  <data name="MenuDisableClickForwardingAllTT" xml:space="preserve">
-    <value>このパネルセット内のすべてのパネルでクリック転送を解除します</value>
   </data>
   <data name="MenuEnableClickThroughAll" xml:space="preserve">
     <value>すべてのパネルでクリック透過を有効</value>

@@ -83,10 +83,6 @@ namespace OnTopReplica {
             CloseSidePanel();
         }
 
-        void Thumbnail_CloneClick(object sender, CloneClickEventArgs e) {
-            Win32Helper.InjectFakeMouseClick(CurrentThumbnailWindowHandle.Handle, e);
-        }
-
     }
 
 }

@@ -207,17 +207,6 @@ Tuto aplikaci je možné spouštět pouze na systémech Windows Vista Home Premi
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Nelze vložit okno.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Přejete si povolit "přeposílání kliknutí"?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>V tomto režimu aplikace OnTopReplica přeposílá kliknutí levého tlačítka myši do zdrojového okna (je tedy možné provádět základní ovládání zdrojového okna bez nutnosti jej aktivovat).
-
-Ukončit tento režim je možné pomocí nabídky ikony v oznamovací oblasti.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Přeposílání kliknutí</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Povolit "Proklikávání" v celoobrazovkovém režimu?</value>
   </data>
@@ -246,12 +235,6 @@ K návratu do standardního režimu použijte příkaz pro vypnutí v nabídce i
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Přepínač, který definuje, zda má aplikace OnTopReplica viditelný okraj okna.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Přeposílání kliknutí</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Zapne "přeposílání kliknutí" do zdrojového okna.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Proklikávání</value>

@@ -75,9 +75,6 @@ namespace OnTopReplica.StartupOptions {
                 .Add<byte>("o|opacity=", "Opacity of the window: {0-255}.", opacity => {
                     options.Opacity = opacity;
                 })
-                .Add("clickForwarding", "Enables click forwarding.", s => {
-                    options.EnableClickForwarding = true;
-                })
                 .Add("clickThrough", "Enables click through.", s => {
                     options.EnableClickThrough = true;
                 })

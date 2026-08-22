@@ -622,35 +622,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Do you want to enable &quot;click forwarding&quot;? に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string InfoClickForwarding {
-            get {
-                return ResourceManager.GetString("InfoClickForwarding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   If this mode is enabled, OnTopReplica will forward all left mouse clicks to the window that is being cloned (this will allow you to do basic mouse operations on the cloned window without having to activate it).
-        ///
-        ///To exit this mode, use the task tray icon&apos;s menu. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string InfoClickForwardingContent {
-            get {
-                return ResourceManager.GetString("InfoClickForwardingContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Click forwarding に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string InfoClickForwardingTitle {
-            get {
-                return ResourceManager.GetString("InfoClickForwardingTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Enable Click-Through mode? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string InfoClickThrough {
@@ -752,24 +723,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Enable Click forwarding に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuClickForwarding {
-            get {
-                return ResourceManager.GetString("MenuClickForwarding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Enable &quot;click forwarding&quot; to the cloned window. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuClickForwardingTT {
-            get {
-                return ResourceManager.GetString("MenuClickForwardingTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Enable Click-Through に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MenuClickThrough {
@@ -806,24 +759,6 @@ namespace OnTopReplica {
         }
 
         /// <summary>
-        ///   Disable Click Forwarding (all panels) に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuDisableClickForwardingAll {
-            get {
-                return ResourceManager.GetString("MenuDisableClickForwardingAll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Disable click forwarding for all panels in this set. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuDisableClickForwardingAllTT {
-            get {
-                return ResourceManager.GetString("MenuDisableClickForwardingAllTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Disable Click-Through (all panels) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MenuDisableClickThroughAll {
@@ -838,24 +773,6 @@ namespace OnTopReplica {
         internal static string MenuDisableClickThroughAllTT {
             get {
                 return ResourceManager.GetString("MenuDisableClickThroughAllTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Enable Click Forwarding (all panels) に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuEnableClickForwardingAll {
-            get {
-                return ResourceManager.GetString("MenuEnableClickForwardingAll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Enable click forwarding for all panels in this set. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuEnableClickForwardingAllTT {
-            get {
-                return ResourceManager.GetString("MenuEnableClickForwardingAllTT", resourceCulture);
             }
         }
         

@@ -272,15 +272,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>无法配对窗口。</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>希望打开“点击转移”吗？</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>如果该模式启用，OnTopReplica将会把所有的鼠标点击事件转移到所监视的窗口（这将可以让你通过OnTopReplica来操作监视的窗口而不用切换到它）。退出该模式请使用任务栏托盘图标的菜单。</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>点击转移</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>打开点击穿透模式？</value>
   </data>
@@ -307,12 +298,6 @@
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>切换是否显示窗口边缘。</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>打开点击转移</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>对监视的窗口打开点击转移。</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>打开点击穿透</value>

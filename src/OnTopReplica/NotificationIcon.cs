@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
@@ -41,9 +41,6 @@ namespace OnTopReplica {
                     ToolTipText = Strings.MenuOpenTT,
                 },
                 _windowsItem,
-                new ToolStripMenuItem(Strings.MenuDisableClickForwardingAll, null, TaskIconDisableClickForwarding_click) {
-                    ToolTipText = Strings.MenuDisableClickForwardingAllTT
-                },
                 new ToolStripMenuItem(Strings.MenuDisableClickThroughAll, null, TaskIconDisableClickThrough_click) {
                     ToolTipText = Strings.MenuDisableClickThroughAllTT
                 },
@@ -102,10 +99,6 @@ namespace OnTopReplica {
 
         private void TaskIconDisableClickThrough_click(object sender, EventArgs e) {
             Form?.DisableClickThroughAllPanels();
-        }
-
-        private void TaskIconDisableClickForwarding_click(object sender, EventArgs e) {
-            Form?.DisableClickForwardingAllPanels();
         }
 
         private void TaskIconColorAlertPauseResume_click(object sender, EventArgs e) {

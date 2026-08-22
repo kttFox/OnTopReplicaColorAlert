@@ -207,17 +207,6 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Unable to fit window.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Do you want to enable "click forwarding"?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>If this mode is enabled, OnTopReplica will forward all left mouse clicks to the window that is being cloned (this will allow you to do basic mouse operations on the cloned window without having to activate it).
-
-To exit this mode, use the task tray icon's menu.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Click forwarding</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Enable Click-Through mode?</value>
   </data>
@@ -246,12 +235,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Toggles the display of the window border.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Enable Click forwarding</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Enable "click forwarding" to the cloned window.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Enable Click-Through</value>

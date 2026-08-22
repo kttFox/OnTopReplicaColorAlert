@@ -66,33 +66,6 @@ namespace OnTopReplica {
         internal static MainForm CurrentPrimary => _openPanels.FirstOrDefault(panel => !panel.IsDisposed && !panel.IsSecondaryPanel);
 
         /// <summary>
-        /// Enables click forwarding on the whole panel set.
-        /// </summary>
-        public void EnableClickForwardingAllPanels() {
-            var primary = _primaryPanel ?? this;
-
-            //Confirm (at most) once for the whole panel set, instead of once per panel
-            if (!primary.ConfirmFirstTimeClickForwarding())
-                return;
-
-            primary.ClickForwardingEnabled = true;
-            foreach( var child in primary._childPanels.Where(child => !child.IsDisposed) ) {
-                child.ClickForwardingEnabled = true;
-            }
-        }
-
-        /// <summary>
-        /// Disables click forwarding on the whole panel set.
-        /// </summary>
-        public void DisableClickForwardingAllPanels() {
-            var primary = _primaryPanel ?? this;
-            primary.ClickForwardingEnabled = false;
-            foreach (var child in primary._childPanels.Where(child => !child.IsDisposed)) {
-                child.ClickForwardingEnabled = false;
-            }
-        }
-
-        /// <summary>
         /// Enables click-through mode on the whole panel set.
         /// </summary>
         public void EnableClickThroughAllPanels() {
@@ -462,7 +435,6 @@ namespace OnTopReplica {
                 Location = Point.Empty,
                 Dock = DockStyle.Fill
             };
-            ThumbnailPanel.CloneClick += Thumbnail_CloneClick;
             Controls.Add(ThumbnailPanel);
 
             //Populate opacity menu (100% down to 10%, in 10% steps)
@@ -798,14 +770,6 @@ namespace OnTopReplica {
 
                 else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4) {
                     FitToThumbnail(2.0);
-                }
-            }
-
-            //ESCAPE
-            else if (e.KeyCode == Keys.Escape) {
-                //Disable click forwarding
-                if (ClickForwardingEnabled) {
-                    ClickForwardingEnabled = false;
                 }
             }
         }

@@ -15,7 +15,6 @@ Very useful for monitoring background processes, wrangling with complex multi-wi
 * Auto-resizing (fit the original window, half, quarter),
 * Position lock on any corner of your screen,
 * Adjustable opacity (10% steps),
-* "Click forwarding": allows to interact with the cloned window,
 * "Click-through": makes the replica ignore any mouse interaction (turns **OnTopReplica** into an overlay if set together with partial opacity),
 * ~~"Group switch"-mode automatically switches through a group of windows while you use them.~~
 

@@ -273,17 +273,6 @@
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>无法适应窗口</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>您想启用“点击转发”吗？</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>如果启用此模式，OnTopReplica会将所有鼠标点击转发到被克隆的窗口上（这将允许您绕过窗口激活直接对被克隆的窗口做一些基本的鼠标操作）
-
-想退出此模式，请使用任务栏托盘图标的菜单</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>点击转发</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>启用点击穿过模式吗？</value>
   </data>
@@ -312,12 +301,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>切换显示窗口边框</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>启用点击转发</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>对被克隆的窗口启用“点击转发”</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>启用点击穿过</value>

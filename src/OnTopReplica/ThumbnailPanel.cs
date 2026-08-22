@@ -120,14 +120,6 @@ namespace OnTopReplica {
         }
 
         /// <summary>
-        /// Gets or sets whether the control should report clicks made on the cloned thumbnail.
-        /// </summary>
-        public bool ReportThumbnailClicks {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Gets the thumbnail's size (in effectively thumbnailed pixels).
         /// </summary>
         /// <remarks>
@@ -190,7 +182,7 @@ namespace OnTopReplica {
             //Check whether this is a hit-test on "client" surface
             if (m.Msg == WM.NCHITTEST && m.Result.ToInt32() == HT.CLIENT) {
                 //Check whether clicks must be reported
-                if(!DrawMouseRegions && !ReportThumbnailClicks){
+                if(!DrawMouseRegions){
                     m.Result = new IntPtr(HT.TRANSPARENT);
                 }
             }
@@ -436,45 +428,6 @@ namespace OnTopReplica {
             }
 
             base.OnPaint(e);
-        }
-
-        #endregion
-
-        #region Thumbnail clone click
-
-        protected override void OnMouseClick(MouseEventArgs e) {
-            base.OnMouseClick(e);
-
-            if (_thumbnail == null)
-                return;
-
-            //Raise clicking event to allow click forwarding
-            if (ReportThumbnailClicks) {
-                OnCloneClick(ClientToThumbnail(e.Location), e.Button, false);
-            }
-        }
-
-        protected override void OnMouseDoubleClick(MouseEventArgs e) {
-            base.OnMouseDoubleClick(e);
-
-            if (_thumbnail == null)
-                return;
-
-            //Raise double clicking event to allow click forwarding
-            if (ReportThumbnailClicks) {
-                OnCloneClick(ClientToThumbnail(e.Location), e.Button, true);
-            }
-        }
-
-        /// <summary>
-        /// Is raised when the thumbnail clone is clicked.
-        /// </summary>
-        public event EventHandler<CloneClickEventArgs> CloneClick;
-
-        protected virtual void OnCloneClick(Point location, MouseButtons buttons, bool doubleClick){
-            var evt = CloneClick;
-            if(evt != null)
-                evt(this, new CloneClickEventArgs(location, buttons, doubleClick));
         }
 
         #endregion

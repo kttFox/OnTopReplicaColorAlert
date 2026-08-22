@@ -22,10 +22,8 @@ namespace OnTopReplica {
             switchToWindowToolStripMenuItem.Enabled = showing;
             resizeToolStripMenuItem.Enabled = showing;
             chromeToolStripMenuItem.Checked = IsChromeVisible;
-            clickForwardingToolStripMenuItem.Checked = ClickForwardingEnabled;
             chromeToolStripMenuItem.Enabled = showing;
             clickThroughToolStripMenuItem.Enabled = showing;
-            clickForwardingToolStripMenuItem.Enabled = showing;
 
             //停止状態に応じてメニュー表記を切り替える
             bool alertPaused = IsColorAlertPausedAllPanels;
@@ -44,20 +42,8 @@ namespace OnTopReplica {
             Native.WindowManagerMethods.SetForegroundWindow(CurrentThumbnailWindowHandle.Handle);
         }
 
-        private void Menu_ClickForwarding_click(object sender, EventArgs e) {
-            ClickForwardingEnabled = !ClickForwardingEnabled;
-        }
-
         private void Menu_ClickThrough_click(object sender, EventArgs e) {
             ClickThroughEnabled = true;
-        }
-
-        private void Menu_EnableClickForwardingAll_click(object sender, EventArgs e) {
-            EnableClickForwardingAllPanels();
-        }
-
-        private void Menu_DisableClickForwardingAll_click(object sender, EventArgs e) {
-            DisableClickForwardingAllPanels();
         }
 
         private void Menu_EnableClickThroughAll_click(object sender, EventArgs e) {

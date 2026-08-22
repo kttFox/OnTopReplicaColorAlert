@@ -207,17 +207,6 @@ Per farlo, clicca col tasto destro del mouse sul desktop e poi su Personalizza.<
   <data name="ErrorUnableToFit" xml:space="preserve">
     <value>Impossibile adattare la finestra.</value>
   </data>
-  <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Attivare la modalità di inoltro dei clic?</value>
-  </data>
-  <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>In questa modalità, OnTopReplica inoltrerà tutti i clic del pulsante sinistro sul clone della finestra alla finestra originale (questo permetterà di interagire in maniera basilare con la finestra clonata, senza averla in primo piano).
-
-Per uscire da questa modalità, usa il menu dell'icona nell'area di notifica.</value>
-  </data>
-  <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Inoltro dei clic</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Attivare la modalità Click-Through?</value>
   </data>
@@ -246,12 +235,6 @@ Per tornare alla modalità normale, usa il comando di disattivazione nel menu de
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
     <value>Abilita o disabilita il bordo della finestra.</value>
-  </data>
-  <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Inoltro dei clic</value>
-  </data>
-  <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Attiva la modalità di "inoltro dei clic" alla finestra clonata.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
     <value>Abilita Click-Through</value>

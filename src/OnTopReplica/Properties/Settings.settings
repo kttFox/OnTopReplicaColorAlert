@@ -17,9 +17,6 @@
     <Setting Name="FirstTimeClickThrough" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="FirstTimeClickForwarding" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="HotKeyCloneCurrent" Type="System.String" Scope="User">
       <Value Profile="(Default)">[CTRL]+[SHIFT]+C</Value>
     </Setting>
