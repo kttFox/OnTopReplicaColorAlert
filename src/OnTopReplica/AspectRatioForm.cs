@@ -103,29 +103,6 @@ namespace OnTopReplica {
         }
 
         /// <summary>
-        /// Adjusts the size of the form by a pixel increment while keeping its aspect ratio.
-        /// </summary>
-        /// <param name="pixelIncrement">Change of size in pixels.</param>
-        public void AdjustSize(int pixelOffset) {
-            Size origSize = Size;
-
-            //Resize to new width (clamped to max allowed size and minimum form size)
-            int newWidth = Math.Max(Math.Min(origSize.Width + pixelOffset, 
-                SystemInformation.MaxWindowTrackSize.Width),
-                MinimumSize.Width);
-
-            //Determine new height while keeping aspect ratio
-            var clientConversionDifference = ClientWindowDifference;
-            int newHeight = (int)((newWidth - ExtraPadding.Horizontal - clientConversionDifference.Width) / AspectRatio) + ExtraPadding.Vertical + clientConversionDifference.Height;
-
-            //Apply and move form to recenter
-            Size = new Size(newWidth, newHeight);
-            int deltaX = Size.Width - origSize.Width;
-            int deltaY = Size.Height - origSize.Height;
-            Location = new System.Drawing.Point(Location.X - (deltaX / 2), Location.Y - (deltaY / 2));
-        }
-
-        /// <summary>
         /// Updates the aspect ratio of the form and optionally forces a refresh.
         /// </summary>
         /// <param name="aspectRatioSource">Size from which aspect ratio should be computed.</param>

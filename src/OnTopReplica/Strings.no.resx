@@ -208,9 +208,6 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Unable to create thumbnail</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Unable to fit window.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Enable Click-Through mode?</value>
   </data>
@@ -252,18 +249,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Lukk panel</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Double</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Half</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Fit to window</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Quarter</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opacity</value>
   </data>
@@ -272,30 +257,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Displays OnTopReplica.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Bottom Left</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Bottom Right</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Center</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Position lock</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Automatically position OnTopReplica on the current screen.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Top Left</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Top Right</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimize</value>
@@ -308,9 +269,6 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Switches to "region mode", that allows you to select a limited region of the source's window as thumbnail.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Resize</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Settings...</value>

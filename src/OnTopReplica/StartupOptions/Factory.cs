@@ -12,7 +12,6 @@ namespace OnTopReplica.StartupOptions {
         static Factory() {
             //Custom type conversion attributes
             TypeDescriptor.AddAttributes(typeof(Size), new TypeConverterAttribute(typeof(SizeConverter)));
-            TypeDescriptor.AddAttributes(typeof(ScreenPosition), new TypeConverterAttribute(typeof(ScreenPositionConverter)));
             TypeDescriptor.AddAttributes(typeof(Rectangle), new TypeConverterAttribute(typeof(RectangleConverter)));
             TypeDescriptor.AddAttributes(typeof(Padding), new TypeConverterAttribute(typeof(PaddingConverter)));
         }
@@ -60,11 +59,6 @@ namespace OnTopReplica.StartupOptions {
                 })
                 .Add<Size>("position=", "Target {X,Y} of the OnTopReplica window.", s => {
                     options.StartLocation = new Point(s.Width, s.Height);
-                    options.StartPositionLock = null;
-                })
-                .Add<ScreenPosition>("screenPosition=", "Resolution independent window position on current screen, with locking. Values: {TR|TL|C|BR|BL}.", pos => {
-                    options.StartLocation = null;
-                    options.StartPositionLock = pos;
                 })
                 .Add<Rectangle>("r|region=", "Region {X,Y,W,H} of the cloned window.", region => {
                     options.Region = new ThumbnailRegion(region);

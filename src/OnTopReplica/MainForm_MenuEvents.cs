@@ -20,7 +20,6 @@ namespace OnTopReplica {
 
             selectRegionToolStripMenuItem.Enabled = showing;
             switchToWindowToolStripMenuItem.Enabled = showing;
-            resizeToolStripMenuItem.Enabled = showing;
             chromeToolStripMenuItem.Checked = IsChromeVisible;
             chromeToolStripMenuItem.Enabled = showing;
             clickThroughToolStripMenuItem.Enabled = showing;
@@ -78,60 +77,6 @@ namespace OnTopReplica {
 
         private void Menu_Region_click(object sender, EventArgs e) {
             SetSidePanel(new OnTopReplica.SidePanels.RegionPanel());
-        }
-
-        private void Menu_Resize_opening(object sender, CancelEventArgs e) {
-            if (!ThumbnailPanel.IsShowingThumbnail)
-                e.Cancel = true;
-        }
-
-        private void Menu_Resize_Double(object sender, EventArgs e) {
-            FitToThumbnail(2.0);
-        }
-
-        private void Menu_Resize_FitToWindow(object sender, EventArgs e) {
-            FitToThumbnail(1.0);
-        }
-
-        private void Menu_Resize_Half(object sender, EventArgs e) {
-            FitToThumbnail(0.5);
-        }
-
-        private void Menu_Resize_Quarter(object sender, EventArgs e) {
-            FitToThumbnail(0.25);
-        }
-
-        private void Menu_Position_Opening(object sender, EventArgs e) {
-            disabledToolStripMenuItem.Checked = (PositionLock == null);
-            topLeftToolStripMenuItem.Checked = (PositionLock == ScreenPosition.TopLeft);
-            topRightToolStripMenuItem.Checked = (PositionLock == ScreenPosition.TopRight);
-            centerToolStripMenuItem.Checked = (PositionLock == ScreenPosition.Center);
-            bottomLeftToolStripMenuItem.Checked = (PositionLock == ScreenPosition.BottomLeft);
-            bottomRightToolStripMenuItem.Checked = (PositionLock == ScreenPosition.BottomRight);
-        }
-
-        private void Menu_Position_Disable(object sender, EventArgs e) {
-            PositionLock = null;
-        }
-
-        private void Menu_Position_TopLeft(object sender, EventArgs e) {
-            PositionLock = ScreenPosition.TopLeft;
-        }
-
-        private void Menu_Position_TopRight(object sender, EventArgs e) {
-            PositionLock = ScreenPosition.TopRight;
-        }
-
-        private void Menu_Position_Center(object sender, EventArgs e) {
-            PositionLock = ScreenPosition.Center;
-        }
-
-        private void Menu_Position_BottomLeft(object sender, EventArgs e) {
-            PositionLock = ScreenPosition.BottomLeft;
-        }
-
-        private void Menu_Position_BottomRight(object sender, EventArgs e) {
-            PositionLock = ScreenPosition.BottomRight;
         }
 
         private void Menu_Reduce_click(object sender, EventArgs e) {

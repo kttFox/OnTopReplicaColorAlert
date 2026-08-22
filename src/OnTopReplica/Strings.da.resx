@@ -206,9 +206,6 @@ Dette program kræver Windows Vista Home Premium eller bedre.</value>
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Kan ikke lave miniature.</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Kunne ikke passes til vinduet.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Ønskes gennem klik i fuldskærms tilstand?</value>
   </data>
@@ -250,18 +247,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Luk panel</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 dobbelt</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 halv</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Pas til vinduet</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 kvart</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Uigennemsigtighed</value>
   </data>
@@ -270,30 +255,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Viser OnTopReplica.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Nederst venstre</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Nederst højre</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Center</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Position</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Sæt OnTopReplica automatiskt på den aktuelle skærm.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Øverst venstre</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Øverst højre</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimer til systembakken.</value>
@@ -306,9 +267,6 @@ For at vende tilbage til normal tilstand skal du bruge deaktiveringskommandoen i
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Skifter til "område tilstand", der tillader dig at vælge et begrænset område af kildens vindue som miniature.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Genskab</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Settings...</value>

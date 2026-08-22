@@ -448,7 +448,7 @@ namespace OnTopReplica {
 
             //Set native renderer on context menus
             Asztal.Szótár.NativeToolStripRenderer.SetToolStripRenderer(
-                menuContext, MenuWindows, menuOpacity, menuResize
+                menuContext, MenuWindows, menuOpacity
             );
 
             //Set to Key event preview
@@ -623,8 +623,6 @@ namespace OnTopReplica {
         protected override void OnResizeEnd(EventArgs e) {
             base.OnResizeEnd(e);
 
-            RefreshScreenLock();
-
             //Persist layout after a move/resize of any panel
             NotifyPanelLayoutChanged();
         }
@@ -663,19 +661,6 @@ namespace OnTopReplica {
             //(TopMost 再設定だけでは順序が保証されない場合があるため)
             //ここでインジケーターの Z オーダーも再同期される。
             ReassertTopMost();
-        }
-
-        protected override void OnMouseWheel(MouseEventArgs e) {
-            base.OnMouseWheel(e);
-
-            if (ThumbnailPanel.IsShowingThumbnail) {
-                SetAspectRatio(ThumbnailPanel.ThumbnailPixelSize, false);
-            }
-
-            int change = (int)(e.Delta / 6.0); //assumes a mouse wheel "tick" is in the 80-120 range
-            AdjustSize(change);
-
-            RefreshScreenLock();
         }
 
         protected override void OnMouseClick(MouseEventArgs e) {
@@ -738,34 +723,6 @@ namespace OnTopReplica {
             ThumbnailPanel.RegionDrawn -= _quickRegionDrawingHandler;
 
             SelectedThumbnailRegion = region;
-        }
-
-        #endregion
-
-        #region Keyboard event handling
-
-        protected override void OnKeyUp(KeyEventArgs e) {
-            base.OnKeyUp(e);
-
-            //ALT
-            if (e.Modifiers == Keys.Alt) {
-                if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1) {
-                    FitToThumbnail(0.25);
-                }
-
-                else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2) {
-                    FitToThumbnail(0.5);
-                }
-
-                else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3 ||
-                         e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0) {
-                    FitToThumbnail(1.0);
-                }
-
-                else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4) {
-                    FitToThumbnail(2.0);
-                }
-            }
         }
 
         #endregion
@@ -924,20 +881,6 @@ namespace OnTopReplica {
             }
 
             UnsetThumbnail();
-        }
-
-        /// <summary>Automatically sizes the window in order to accomodate the thumbnail p times.</summary>
-        /// <param name="p">Scale of the thumbnail to consider.</param>
-        private void FitToThumbnail(double p) {
-            try {
-                Size originalSize = ThumbnailPanel.ThumbnailPixelSize;
-                Size fittedSize = new Size((int)(originalSize.Width * p), (int)(originalSize.Height * p));
-                ClientSize = fittedSize;
-                RefreshScreenLock();
-            }
-            catch (Exception ex) {
-                ThumbnailError(ex, false, Strings.ErrorUnableToFit);
-            }
         }
 
         #endregion

@@ -24,8 +24,6 @@ namespace OnTopReplica.StartupOptions {
 
         public Point? StartLocation { get; set; }
 
-        public ScreenPosition? StartPositionLock { get; set; }
-
         public Size? StartSize { get; set; }
 
         public int? StartWidth { get; set; }
@@ -124,10 +122,6 @@ namespace OnTopReplica.StartupOptions {
                 seeker.Refresh();
 
                 handle = seeker.Windows.FirstOrDefault();
-            }
-
-            if (StartPositionLock.HasValue) {
-                form.PositionLock = StartPositionLock.Value;
             }
 
             //Clone any found handle (this applies thumbnail and aspect ratio)

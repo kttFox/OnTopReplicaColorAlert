@@ -204,9 +204,6 @@ Es necesario utilizar Windows Vista o 7 en su versión Home Premium o superior.<
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Imposible clonar la ventana.</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Imposible adaptar la ventana.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Activar el modo Click a través?</value>
   </data>
@@ -248,18 +245,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Cerrar panel</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Doble</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Mitad</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Tamaño original</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Un cuarto</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opacidad</value>
   </data>
@@ -268,30 +253,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Muestra OnTopReplica.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Abajo a la izquierda</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Abajo a la derecha</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Centrado</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Desactivado</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Posición</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Posiciona automáticamente OnTopReplica sobre el monitor actual.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Arriba a la izquierda</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Arriba a la derecha</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimizar</value>
@@ -304,9 +265,6 @@ Para volver al modo normal, usa el comando de desactivación en el menú del ico
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Activa o desactiva "Seleccionar región", que permite seleccionar una región específica de la ventana clonada.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Cambiar tamaño</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Ajustes...</value>

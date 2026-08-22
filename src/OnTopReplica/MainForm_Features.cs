@@ -99,37 +99,5 @@ namespace OnTopReplica {
 
         #endregion
 
-        #region Position lock
-
-        ScreenPosition? _positionLock = null;
-
-        /// <summary>
-        /// Gets or sets the screen position where the window is currently locked in.
-        /// </summary>
-        public ScreenPosition? PositionLock {
-            get {
-                return _positionLock;
-            }
-            set {
-                if (value != null)
-                    this.SetScreenPosition(value.Value);
-
-                _positionLock = value;
-                NotifyPanelLayoutChanged();
-            }
-        }
-
-        /// <summary>
-        /// Refreshes window position if in lock mode.
-        /// </summary>
-        private void RefreshScreenLock() {
-            //If locked in position, move accordingly
-            if (PositionLock.HasValue) {
-                this.SetScreenPosition(PositionLock.Value);
-            }
-        }
-
-        #endregion
-
     }
 }

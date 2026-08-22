@@ -204,9 +204,6 @@ Bu programı Windows Vista Home Premium veya daha iyisinde çalıştırmalısın
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Küçükresim yaratılamıyor</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Pencereye oturtulamıyor.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Direkt-Tıkla modunu etkinleştir?</value>
   </data>
@@ -248,18 +245,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Paneli kapat</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Çift</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Yarım</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 pencereye sığdır</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Çeyrek</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Opaklık</value>
   </data>
@@ -268,30 +253,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>OnTopReplica'yı görüntüler.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Sol Alt</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Sağ Alt</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Merkez</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Devredışı</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Konum kilidi</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>OnTopReplica'yı otomatik olarak şu anki ekrana konumlandırır.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Sol Üst</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Sağ Üst</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Küçült</value>
@@ -304,9 +265,6 @@ Normal moda dönmek için, bildirim alanındaki OnTopReplica simgesinin menüsü
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>"bölge modu"na geçer, bu size kaynak penceresinin küçük resminin kısıtlı bir bölgesini seçmenize izin verir.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Yeniden boyutlandır</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Ayarlar...</value>

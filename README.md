@@ -12,7 +12,6 @@ Very useful for monitoring background processes, wrangling with complex multi-wi
 * Color-alert feature lets you monitor a target window for a chosen color; open the **Color Alert** side panel, select a color and check "Enable Color Detection" (settings take effect immediately). If the monitored window contains the color, the alarm will sound for 3 seconds and an entry is written to the log.
 * Select a subregion of the cloned window, which:
   * Can use relative coordinates from the target window's borders.
-* Auto-resizing (fit the original window, half, quarter),
 * Position lock on any corner of your screen,
 * Adjustable opacity (10% steps),
 * "Click-through": makes the replica ignore any mouse interaction (turns **OnTopReplica** into an overlay if set together with partial opacity),

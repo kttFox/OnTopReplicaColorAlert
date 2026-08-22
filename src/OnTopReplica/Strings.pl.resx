@@ -204,9 +204,6 @@ Aplikacja działa na Windows Vista Home Premium i nowszych.</value>
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Nie można utworzyć miniatury.</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Nie można dopasować okna.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Włączyć tryb kliknij-przez?</value>
   </data>
@@ -248,18 +245,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Zamknij panel</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Podwójny</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Połowa</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Rozmiar oryginalny</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Ćwiartka</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Przeźroczystość</value>
   </data>
@@ -268,30 +253,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Wyświetla OnTopReplica.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Dół Lewo</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Dół Prawo</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Środek</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Wyłączone</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Zablokuj pozycję</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Automatycznie ustawia pozycję OnTopReplica na bieżącym ekranie.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Góra Lewo</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Góra Prawo</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimalizuj</value>
@@ -304,9 +265,6 @@ Aby powrócić do normalnego trybu, użyj polecenia wyłączenia w menu ikony On
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Przełącza na "tryb regionu", w którym można zaznaczyć jako miniaturę określony obszar okna źródłowego.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Zmień rozmiar</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Ustawienia...</value>

@@ -194,9 +194,6 @@
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>無法建立縮圖</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>無法配對視窗。</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>打開點擊穿透模式？</value>
   </data>
@@ -236,18 +233,6 @@
   <data name="MenuClosePanel" xml:space="preserve">
     <value>關閉面板</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 兩倍</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 一半</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 原本大小</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 四分之一</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>透明度</value>
   </data>
@@ -256,30 +241,6 @@
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>顯示 OnTopReplica。</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>左下</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>右下</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>中鍵</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>關閉</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>鎖定位置</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>自動將 OnTopReplica 鎖定在目前設定的螢幕位置上。</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>左上</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>右上</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>最小化</value>
@@ -292,9 +253,6 @@
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>切換「區域模式」，可以讓你只顯示監看視窗的一部分內容。</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>縮放</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>設定…</value>

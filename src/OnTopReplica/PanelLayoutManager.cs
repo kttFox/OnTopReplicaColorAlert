@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -514,10 +514,6 @@ namespace OnTopReplica {
             tokens.Add("size=" + panel.ClientSize.Width.ToString(inv) + "," + panel.ClientSize.Height.ToString(inv));
             tokens.Add("chrome=" + (panel.IsChromeVisible ? "1" : "0"));
             tokens.Add("opacity=" + panel.Opacity.ToString("R", inv));
-            if (panel.PositionLock.HasValue) {
-                tokens.Add("screenLock=" + panel.PositionLock.Value.ToString());
-            }
-
             //Region (fall back to the last known region while no thumbnail is
             //shown: no window attached, or thumbnail dropped by a DWM error).
             //A region deliberately cleared by the user is also removed from the
@@ -608,13 +604,6 @@ namespace OnTopReplica {
             if (tokens.TryGetValue("opacity", out opacityToken) &&
                 double.TryParse(opacityToken, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out opacity)) {
                 panel.Opacity = Math.Max(0.1, Math.Min(1.0, opacity));
-            }
-
-            string screenLockToken;
-            ScreenPosition screenLock;
-            if (tokens.TryGetValue("screenLock", out screenLockToken) &&
-                Enum.TryParse(screenLockToken, out screenLock)) {
-                panel.PositionLock = screenLock;
             }
 
             int[] regionBounds;

@@ -204,9 +204,6 @@ Dieses Programm benötigt Windows Vista Home Premium oder besser.</value>
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Vorschaubild konnte nicht erstellt werden</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Das Fenster passt nicht in das Vorschaufenster.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Durchklickmodus aktivieren?</value>
   </data>
@@ -248,18 +245,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Panel schließen</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Verdoppeln</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Halbieren</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 An Fenster anpassen</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Vierteln</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Deckkraft</value>
   </data>
@@ -268,30 +253,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>OnTopReplica anzeigen.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Unten Links</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Unten Rechts</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Mitte</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Deaktiviert</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Position feststlegen</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>OnTopReplica automatisch auf dem aktiven Bildschirm positionieren.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Oben Links</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Oben Rechts</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimieren</value>
@@ -304,9 +265,6 @@ Um zum normalen Modus zurückzukehren, verwenden Sie den Deaktivieren-Befehl im 
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Wechselt zum "Bereichsmodus" welcher es erlaubt, nur einen ausgewählten Teil eines Fensters zu klonen.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Grösse</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Einstellungen...</value>

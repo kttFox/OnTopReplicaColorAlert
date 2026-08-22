@@ -613,15 +613,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   Unable to fit window. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string ErrorUnableToFit {
-            get {
-                return ResourceManager.GetString("ErrorUnableToFit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Enable Click-Through mode? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string InfoClickThrough {
@@ -813,42 +804,6 @@ namespace OnTopReplica {
         }
         
         /// <summary>
-        ///   2:1 Double に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuFitDouble {
-            get {
-                return ResourceManager.GetString("MenuFitDouble", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   1:2 Half に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuFitHalf {
-            get {
-                return ResourceManager.GetString("MenuFitHalf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   1:1 Fit to window に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuFitOriginal {
-            get {
-                return ResourceManager.GetString("MenuFitOriginal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   1:4 Quarter に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuFitQuarter {
-            get {
-                return ResourceManager.GetString("MenuFitQuarter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Opacity に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MenuOpacity {
@@ -872,78 +827,6 @@ namespace OnTopReplica {
         internal static string MenuOpenTT {
             get {
                 return ResourceManager.GetString("MenuOpenTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Bottom Left に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosBottomLeft {
-            get {
-                return ResourceManager.GetString("MenuPosBottomLeft", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Bottom Right に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosBottomRight {
-            get {
-                return ResourceManager.GetString("MenuPosBottomRight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Center に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosCenter {
-            get {
-                return ResourceManager.GetString("MenuPosCenter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Disabled に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosDisabled {
-            get {
-                return ResourceManager.GetString("MenuPosDisabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Position lock に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosition {
-            get {
-                return ResourceManager.GetString("MenuPosition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Automatically position OnTopReplica on the current screen. に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPositionTT {
-            get {
-                return ResourceManager.GetString("MenuPositionTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Top Left に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosTopLeft {
-            get {
-                return ResourceManager.GetString("MenuPosTopLeft", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Top Right に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuPosTopRight {
-            get {
-                return ResourceManager.GetString("MenuPosTopRight", resourceCulture);
             }
         }
         
@@ -980,15 +863,6 @@ namespace OnTopReplica {
         internal static string MenuRegionTT {
             get {
                 return ResourceManager.GetString("MenuRegionTT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Resize に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string MenuResize {
-            get {
-                return ResourceManager.GetString("MenuResize", resourceCulture);
             }
         }
         

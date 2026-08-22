@@ -201,9 +201,6 @@
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Невозможно создать окно просмотра.</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Невозможно уместить в окне.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Включить режим сквозных щелчков мышью?</value>
   </data>
@@ -243,18 +240,6 @@
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Закрыть панель</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Двойной</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Половина</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 По размерам окна</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Четверть</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Прозрачность</value>
   </data>
@@ -263,30 +248,6 @@
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Показывает программу.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Снизу слева</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Снизу справа</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>В центре</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Отключено</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Закрепить положение</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Автоматически разместить программу на текущем экране.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Сверху слева</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Сверху справа</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Свернуть</value>
@@ -299,9 +260,6 @@
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Переключается в «режим области», позволяющий выбирать для показа ограниченную область исходного окна.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Изменить размер</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Настройки...</value>

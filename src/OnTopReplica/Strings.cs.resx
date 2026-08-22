@@ -204,9 +204,6 @@ Tuto aplikaci je možné spouštět pouze na systémech Windows Vista Home Premi
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
     <value>Nelze vytvořit náhled.</value>
   </data>
-  <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Nelze vložit okno.</value>
-  </data>
   <data name="InfoClickThrough" xml:space="preserve">
     <value>Povolit "Proklikávání" v celoobrazovkovém režimu?</value>
   </data>
@@ -248,18 +245,6 @@ K návratu do standardního režimu použijte příkaz pro vypnutí v nabídce i
   <data name="MenuClosePanel" xml:space="preserve">
     <value>Zavřít panel</value>
   </data>
-  <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Dvojnásobná</value>
-  </data>
-  <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Poloviční</value>
-  </data>
-  <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Jako zdroj</value>
-  </data>
-  <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Čtvrtinová</value>
-  </data>
   <data name="MenuOpacity" xml:space="preserve">
     <value>Průhlednost</value>
   </data>
@@ -268,30 +253,6 @@ K návratu do standardního režimu použijte příkaz pro vypnutí v nabídce i
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
     <value>Zobrazí aplikaci OnTopReplica.</value>
-  </data>
-  <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Dolní levý roh</value>
-  </data>
-  <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Dolní pravý roh</value>
-  </data>
-  <data name="MenuPosCenter" xml:space="preserve">
-    <value>Uprostřed</value>
-  </data>
-  <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Vypnuto</value>
-  </data>
-  <data name="MenuPosition" xml:space="preserve">
-    <value>Umístění</value>
-  </data>
-  <data name="MenuPositionTT" xml:space="preserve">
-    <value>Automatická pozice aplikace OnTopReplica vzhledem k obrazovce.</value>
-  </data>
-  <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Horní levý roh</value>
-  </data>
-  <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Horní pravý rok</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
     <value>Minimalizovat do traye</value>
@@ -304,9 +265,6 @@ K návratu do standardního režimu použijte příkaz pro vypnutí v nabídce i
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
     <value>Přepne do režimu "výřezu", který umožní zvolit pouze část okna jako náhled.</value>
-  </data>
-  <data name="MenuResize" xml:space="preserve">
-    <value>Velikost</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
     <value>Nastavení...</value>
