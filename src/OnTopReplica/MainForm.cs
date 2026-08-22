@@ -150,6 +150,14 @@ namespace OnTopReplica {
             (_primaryPanel ?? this)._colorAlertStoppedForLoss = false;
         }
 
+        /// <summary>
+        /// カラーアラート検出の停止/開始をパネルセット全体で切り替える。
+        /// (コンテキストメニュー・タスクトレイの一括操作と同じ挙動)
+        /// </summary>
+        public void ToggleColorAlertPaused() {
+            SetColorAlertPausedAllPanels(!IsColorAlertPausedAllPanels);
+        }
+
         static void SetColorAlertPaused(MainForm panel, bool paused) {
             try {
                 var proc = panel.MessagePumpManager.Get<MessagePumpProcessors.ColorDetectionProcessor>();
@@ -663,6 +671,16 @@ namespace OnTopReplica {
             ReassertTopMost();
         }
 
+        protected override void OnMouseDoubleClick(MouseEventArgs e) {
+            base.OnMouseDoubleClick(e);
+
+            //Auxiliary path: reached when the double click is not translated into
+            //a caption click (e.g. while dragging is disabled)
+            if (e.Button == System.Windows.Forms.MouseButtons.Left) {
+                ToggleColorAlertPaused();
+            }
+        }
+
         protected override void OnMouseClick(MouseEventArgs e) {
             base.OnMouseClick(e);
 
@@ -699,6 +717,17 @@ namespace OnTopReplica {
 
                         ThumbnailPanel.EnableMouseRegionsDrawingWithMouseDown();
                         ThumbnailPanel.RegionDrawn += _quickRegionDrawingHandler;
+
+                        m.Result = IntPtr.Zero;
+                        return;
+                    }
+                    break;
+
+                case WM.NCLBUTTONDBLCLK:
+                    //Toggle the color alert of the whole panel set on double click over the caption
+                    //(the glass form translates client clicks into caption clicks)
+                    if (m.WParam.ToInt32() == HT.CAPTION) {
+                        ToggleColorAlertPaused();
 
                         m.Result = IntPtr.Zero;
                         return;
