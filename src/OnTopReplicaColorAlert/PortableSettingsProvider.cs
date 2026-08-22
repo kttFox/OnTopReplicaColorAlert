@@ -46,8 +46,10 @@ namespace OnTopReplicaColorAlert {
                 //Fall back to the pre-rename file (never overwritten: saves go to FilePath)
                 if (_doc == null && File.Exists(LegacyFilePath)) {
                     _doc = TryLoad(LegacyFilePath);
-                    if (_doc != null)
+                    if (_doc != null) {
                         Log.Write("Imported settings from legacy file {0}", LegacyFileName);
+                        MigrateLegacyFile();
+                    }
                 }
 
                 if (_doc == null)
@@ -114,6 +116,29 @@ namespace OnTopReplicaColorAlert {
             }
             catch (Exception ex) {
                 Log.WriteException("Unable to save settings file", ex);
+            }
+        }
+
+        /// <summary>
+        /// Writes the imported settings under the current file name and removes the
+        /// pre-rename file. The old file is only deleted once the new one is written,
+        /// so a failure cannot lose the settings.
+        /// </summary>
+        void MigrateLegacyFile() {
+            try {
+                _doc.Save(FilePath);
+            }
+            catch (Exception ex) {
+                Log.WriteException("Unable to migrate legacy settings file", ex);
+                return;
+            }
+
+            try {
+                File.Delete(LegacyFilePath);
+                Log.Write("Migrated settings to {0} and deleted {1}", FileName, LegacyFileName);
+            }
+            catch (Exception ex) {
+                Log.WriteException("Unable to delete legacy settings file", ex);
             }
         }
     }

@@ -83,6 +83,19 @@
 * Microsoft .NET Framework 4.8。
 * デスクトップコンポジション(いわゆる Windows *Aero*)が有効であること。
 
+## 旧バージョンからの引き継ぎ
+
+旧バージョン(OnTopReplica ベースのフォーク)の設定とパネル構成を引き継ぐ場合は、旧フォルダーにある次の 2 ファイルを本アプリの実行ファイルと同じフォルダーへコピーしてから起動してください。
+
+| 旧ファイル | 内容 |
+| --- | --- |
+| `OnTopReplica.Settings.xml` | アプリケーション設定(言語・インジケーター・自動非表示など) |
+| `PanelLayout v3.txt` | パネル構成(対象ウィンドウ・位置・サイズ・監視領域・カラーアラート設定) |
+
+起動時に自動的に読み込まれ、新しいファイル名(`OnTopReplicaColorAlert.Settings.xml` と `PanelLayout.txt`)へ移行されます。移行に成功した時点で元の 2 ファイルは削除されます(新ファイルの書き込みに成功してから削除するため、失敗した場合は元のファイルが残ります)。
+
+なお、廃止した機能に関する設定(画面の隅への位置固定、ホットキー、クリック転送など)は引き継がれません。
+
 ## 派生元とライセンス
 
 本アプリは Lorenz Cuno Klopfenstein 氏の [OnTopReplica](https://github.com/LorenzCK/OnTopReplica) から派生したもので、**Microsoft Reciprocal License (Ms-RL)** で配布されます([LICENSE](LICENSE) を参照)。ソースコードの一部の著作権は Lorenz Cuno Klopfenstein 氏に帰属します。

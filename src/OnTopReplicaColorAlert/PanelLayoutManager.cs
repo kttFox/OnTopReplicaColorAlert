@@ -130,6 +130,30 @@ namespace OnTopReplicaColorAlert {
         }
 
         /// <summary>
+        /// Copies a layout file written under a pre-rename file name to the current
+        /// file name and removes the old one. The old file is only deleted once the
+        /// copy exists, so a failure cannot lose the layout.
+        /// </summary>
+        static void MigrateLegacyFile(string legacyPath) {
+            try {
+                File.Copy(legacyPath, LayoutFilePath, true);
+            }
+            catch (Exception ex) {
+                Log.WriteException("Unable to migrate legacy panel layout file", ex);
+                return;
+            }
+
+            try {
+                File.Delete(legacyPath);
+                Log.Write("Migrated panel layout to {0} and deleted {1}",
+                    FileName, Path.GetFileName(legacyPath));
+            }
+            catch (Exception ex) {
+                Log.WriteException("Unable to delete legacy panel layout file", ex);
+            }
+        }
+
+        /// <summary>
         /// Restores secondary panels bound to the given primary form.
         /// </summary>
         public static void Restore(MainForm primary) {
@@ -141,6 +165,10 @@ namespace OnTopReplicaColorAlert {
                 var lines = File.ReadAllLines(path);
                 if (lines.Length < 2 || Array.IndexOf(AcceptedHeaders, lines[0]) < 0)
                     return;
+
+                //Read from a pre-rename file: take it over under the current name
+                if (path != LayoutFilePath)
+                    MigrateLegacyFile(path);
 
                 int count = 0;
                 bool primaryDone = false;

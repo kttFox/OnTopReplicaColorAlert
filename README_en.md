@@ -82,6 +82,19 @@ Features of the original OnTopReplica that this application no longer has:
 * Microsoft .NET Framework 4.8.
 * Desktop Composition (a.k.a. Windows *Aero*) enabled.
 
+## Upgrading from an older version
+
+To carry over the settings and panel layout of an older version (a fork based on OnTopReplica), copy these two files from the old folder next to this application's executable before starting it:
+
+| Old file | Contents |
+| --- | --- |
+| `OnTopReplica.Settings.xml` | Application settings (language, indicator, auto-hide, …) |
+| `PanelLayout v3.txt` | Panel layout (target window, position, size, monitored region, color-alert settings) |
+
+They are read on startup and migrated to the current file names (`OnTopReplicaColorAlert.Settings.xml` and `PanelLayout.txt`). Once the migration succeeds, the two original files are deleted — the new file is always written first, so the originals stay in place if the migration fails.
+
+Settings of removed features (position lock, hotkeys, click forwarding, …) are not carried over.
+
 ## Origin and license
 
 OnTopReplicaColorAlert is derived from [OnTopReplica](https://github.com/LorenzCK/OnTopReplica) by Lorenz Cuno Klopfenstein and is distributed under the **Microsoft Reciprocal License (Ms-RL)** — see [LICENSE](LICENSE). Portions of the source code are Copyright © Lorenz Cuno Klopfenstein.
