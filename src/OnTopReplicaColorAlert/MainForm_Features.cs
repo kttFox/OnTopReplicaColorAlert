@@ -26,7 +26,7 @@ namespace OnTopReplicaColorAlert {
                 }
 
                 TransparencyKey = (value) ? Color.Black : DefaultNonClickTransparencyKey;
-                if (value) {
+                if (value && CurrentThumbnailWindowHandle != null) {
                     //Re-force as top most (always helps in some cases)
                     TopMost = false;
                     this.Activate();

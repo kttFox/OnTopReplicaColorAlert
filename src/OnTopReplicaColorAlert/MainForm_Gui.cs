@@ -28,6 +28,25 @@ namespace OnTopReplicaColorAlert {
         }
 
         /// <summary>
+        /// クローン対象を捕捉しているかどうかに応じて最前面表示を切り替える。
+        /// 何も捕捉していない間は最前面にせず、他のウィンドウを邪魔しない。
+        /// </summary>
+        internal void UpdateTopMostState() {
+            if (IsDisposed || Disposing)
+                return;
+
+            bool shouldBeTopMost = (CurrentThumbnailWindowHandle != null);
+            if (TopMost != shouldBeTopMost) {
+                TopMost = shouldBeTopMost;
+            }
+
+            if (shouldBeTopMost)
+                ReassertTopMost();
+            else
+                UpdateColorAlertIndicator();
+        }
+
+        /// <summary>
         /// フォーカスを奪わずに最前面(TOPMOST バンドの先頭)へ復帰させる。
         /// </summary>
         internal void ReassertTopMost() {

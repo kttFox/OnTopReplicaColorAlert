@@ -277,7 +277,8 @@
 			this.MinimumSize = new System.Drawing.Size(44, 44);
 			this.Name = "MainForm";
 			this.Text = "OnTopReplicaColorAlert";
-			this.TopMost = true;
+			//クローン対象を捕捉した時点で UpdateTopMostState() が有効化する
+			this.TopMost = false;
 			this.menuContext.ResumeLayout(false);
 			this.MenuWindows.ResumeLayout(false);
 			this.ResumeLayout(false);

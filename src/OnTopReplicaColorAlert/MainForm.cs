@@ -681,13 +681,16 @@ namespace OnTopReplicaColorAlert {
 
             //HACK: sometimes, even if TopMost is true, the window loses its "always on top" status.
             //  This is a fix attempt that probably won't work...
-            TopMost = false;
-            TopMost = true;
+            //クローン対象を捕捉していない間は最前面にしない。
+            if (CurrentThumbnailWindowHandle != null) {
+                TopMost = false;
+                TopMost = true;
+            }
 
             //フォーカスを奪わずに最前面バンドの先頭へ確実に復帰させる。
             //(TopMost 再設定だけでは順序が保証されない場合があるため)
             //ここでインジケーターの Z オーダーも再同期される。
-            ReassertTopMost();
+            UpdateTopMostState();
         }
 
         protected override void OnMouseDoubleClick(MouseEventArgs e) {
@@ -829,6 +832,9 @@ namespace OnTopReplicaColorAlert {
                 return;
             }
 
+            //捕捉できたので最前面表示を有効化する
+            UpdateTopMostState();
+
             //Keep secondary panels on the same source window as the primary
             foreach (var child in _childPanels.ToArray()) {
                 if (child.CurrentThumbnailWindowHandle == null ||
@@ -858,6 +864,9 @@ namespace OnTopReplicaColorAlert {
 
             //Disable aspect ratio
             KeepAspectRatio = false;
+
+            //何も捕捉していない状態では最前面表示を解除する
+            UpdateTopMostState();
 
             //Secondary panels follow the primary
             foreach (var child in _childPanels.ToArray()) {
