@@ -531,6 +531,9 @@ namespace OnTopReplicaColorAlert {
                     _suppressLayoutSave = false;
                 }
             }
+
+            //復元・起動オプション適用後の位置・サイズを初期値として記録する
+            TrackVisibleGeometry();
         }
 
         protected override void OnClosing(CancelEventArgs e) {
@@ -633,11 +636,18 @@ namespace OnTopReplicaColorAlert {
                 }
             }
 
+            //通常表示中のサイズを記録する(最小化中の値は保存に使わない)
+            TrackVisibleGeometry();
+
             UpdateColorAlertIndicator();
         }
 
         protected override void OnLocationChanged(EventArgs e) {
             base.OnLocationChanged(e);
+
+            //通常表示中の位置を記録する(最小化中の -32000,-32000 は記録しない)
+            TrackVisibleGeometry();
+
             UpdateColorAlertIndicator();
         }
 

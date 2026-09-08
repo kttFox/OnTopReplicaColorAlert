@@ -97,7 +97,7 @@ namespace OnTopReplicaColorAlert.StartupOptions {
             //Unconditionally setting it would overwrite the restored panel opacity
             //(a panel's OnShown runs these options after the layout was restored).
             if (Opacity != 255) {
-                form.Opacity = (double)Opacity / 255.0;
+                form.VisibleOpacity = (double)Opacity / 255.0;
             }
 
             //Seek handle for thumbnail cloning

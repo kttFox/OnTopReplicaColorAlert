@@ -569,11 +569,14 @@ namespace OnTopReplicaColorAlert {
             var inv = CultureInfo.InvariantCulture;
             var tokens = new List<string>();
 
-            tokens.Add("pos=" + panel.Location.X.ToString(inv) + "," + panel.Location.Y.ToString(inv));
-            tokens.Add("size=" + panel.ClientSize.Width.ToString(inv) + "," + panel.ClientSize.Height.ToString(inv));
+            //最小化中の画面外座標・最小化枠のサイズではなく、表示時の位置とサイズを保存する
+            var pos = panel.VisibleLocation;
+            var size = panel.VisibleClientSize;
+            tokens.Add("pos=" + pos.X.ToString(inv) + "," + pos.Y.ToString(inv));
+            tokens.Add("size=" + size.Width.ToString(inv) + "," + size.Height.ToString(inv));
             tokens.Add("chrome=" + (panel.IsChromeVisible ? "1" : "0"));
             //隠されている(Opacity=0)パネルの見た目の値ではなく、表示時の透明度を保存する
-            tokens.Add("opacity=" + Program.Platform.GetVisibleOpacity(panel).ToString("R", inv));
+            tokens.Add("opacity=" + panel.VisibleOpacity.ToString("R", inv));
             //Region (fall back to the last known region while no thumbnail is
             //shown: no window attached, or thumbnail dropped by a DWM error).
             //A region deliberately cleared by the user is also removed from the
@@ -614,6 +617,40 @@ namespace OnTopReplicaColorAlert {
         /// <summary>
         /// Parses a token value holding a fixed number of comma-separated integers.
         /// </summary>
+        //パネルの最小クライアントサイズ。これより小さい値が保存されていても操作可能に保つ。
+        const int MinPanelClientSize = 40;
+
+        /// <summary>
+        /// 保存されたクライアントサイズを、操作可能な最小値と画面の作業領域の
+        /// 範囲内に収める。
+        /// </summary>
+        static Size SanitizeClientSize(Size size) {
+            var workingArea = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
+            return new Size(
+                Math.Min(Math.Max(size.Width, MinPanelClientSize), workingArea.Width),
+                Math.Min(Math.Max(size.Height, MinPanelClientSize), workingArea.Height));
+        }
+
+        /// <summary>
+        /// 保存された位置を、いずれかの画面の作業領域と重なる位置へ補正する。
+        /// どの画面にも掛からない場合(最小化中に保存された -32000,-32000 や、
+        /// 取り外されたモニターの座標)は、最も近い画面の中に収める。
+        /// </summary>
+        static Point SanitizeLocation(Point location, Size windowSize) {
+            var bounds = new Rectangle(location, windowSize);
+            foreach (var screen in System.Windows.Forms.Screen.AllScreens) {
+                if (screen.WorkingArea.IntersectsWith(bounds))
+                    return location;
+            }
+
+            var workingArea = System.Windows.Forms.Screen.FromPoint(location).WorkingArea;
+            Log.Write("Panel layout: stored position {0},{1} is off-screen, moving into {2}",
+                location.X, location.Y, workingArea);
+            return new Point(
+                Math.Min(Math.Max(location.X, workingArea.Left), Math.Max(workingArea.Right - windowSize.Width, workingArea.Left)),
+                Math.Min(Math.Max(location.Y, workingArea.Top), Math.Max(workingArea.Bottom - windowSize.Height, workingArea.Top)));
+        }
+
         static bool TryParseInts(Dictionary<string, string> tokens, string key, int count, out int[] values) {
             values = null;
             string v;
@@ -656,14 +693,17 @@ namespace OnTopReplicaColorAlert {
                 _snapshot.PanelChrome[panel] = visible;
                 ApplyChrome(panel, visible);
             }
-            panel.Location = new Point(pos[0], pos[1]);
-            panel.ClientSize = new Size(size[0], size[1]);
+            //古いバージョンが最小化中に保存した壊れた値(画面外座標や極小サイズ)でも
+            //パネルが見えなくならないよう、画面内に収まる値へ補正する
+            panel.ClientSize = SanitizeClientSize(new Size(size[0], size[1]));
+            panel.Location = SanitizeLocation(new Point(pos[0], pos[1]), panel.Size);
+            panel.SeedVisibleGeometry(panel.Location, panel.ClientSize);
 
             string opacityToken;
             double opacity;
             if (tokens.TryGetValue("opacity", out opacityToken) &&
                 double.TryParse(opacityToken, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out opacity)) {
-                panel.Opacity = Math.Max(0.1, Math.Min(1.0, opacity));
+                panel.VisibleOpacity = opacity; //セッター側でクランプされる
             }
 
             int[] regionBounds;

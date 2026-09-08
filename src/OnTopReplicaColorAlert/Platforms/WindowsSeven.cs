@@ -7,10 +7,6 @@ namespace OnTopReplicaColorAlert.Platforms {
 
     class WindowsSeven : WindowsVista {
 
-        //Opacity is stored per form: multiple panel windows can be hidden at once
-        private readonly System.Collections.Generic.Dictionary<MainForm, double> _previousOpacity =
-            new System.Collections.Generic.Dictionary<MainForm, double>();
-
         public override void PreHandleFormInit() {
             //Set Application ID
             WindowsSevenMethods.SetCurrentProcessExplicitAppUserModelID("LorenzCunoKlopfenstein.OnTopReplicaColorAlert.MainForm");
@@ -23,9 +19,8 @@ namespace OnTopReplicaColorAlert.Platforms {
         }
 
         public override void HideForm(MainForm form) {
-            if (form.Opacity > 0.0) {
-                _previousOpacity[form] = form.Opacity;
-            }
+            //表示時の透明度はフォーム側 (MainForm.VisibleOpacity) が保持するため、
+            //ここでは見た目だけを消す。
             form.Opacity = 0;
         }
 
@@ -33,19 +28,9 @@ namespace OnTopReplicaColorAlert.Platforms {
             return (form.Opacity == 0.0);
         }
 
-        public override double GetVisibleOpacity(MainForm form) {
-            if (form.Opacity == 0.0) {
-                double previous;
-                return _previousOpacity.TryGetValue(form, out previous) ? previous : 1.0;
-            }
-            return form.Opacity;
-        }
-
         public override void RestoreForm(MainForm form) {
             if (form.Opacity == 0.0) {
-                double previous;
-                form.Opacity = _previousOpacity.TryGetValue(form, out previous) ? previous : 1.0;
-                _previousOpacity.Remove(form);
+                form.Opacity = form.VisibleOpacity;
             }
 
             form.Show();

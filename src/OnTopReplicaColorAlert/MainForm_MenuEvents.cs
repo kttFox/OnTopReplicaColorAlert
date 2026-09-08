@@ -59,8 +59,9 @@ namespace OnTopReplicaColorAlert {
                 if (menuItem == null || !(menuItem.Tag is double))
                     continue;
 
-                //Form.Opacity is stored with limited precision: compare with tolerance
-                menuItem.Checked = Math.Abs((double)menuItem.Tag - this.Opacity) < 0.005;
+                //Opacity is stored with limited precision: compare with tolerance
+                //(非表示中は Opacity=0 になるため、表示時の値と比較する)
+                menuItem.Checked = Math.Abs((double)menuItem.Tag - this.VisibleOpacity) < 0.005;
             }
         }
 
@@ -69,7 +70,7 @@ namespace OnTopReplicaColorAlert {
 
             if (this.Visible) {
                 //Target opacity is stored in the item's tag
-                this.Opacity = (double)tsi.Tag;
+                this.VisibleOpacity = (double)tsi.Tag;
                 Program.Platform.OnFormStateChange(this);
                 NotifyPanelLayoutChanged();
             }
