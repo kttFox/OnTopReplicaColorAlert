@@ -407,6 +407,35 @@ namespace OnTopReplicaColorAlert {
         }
 
         /// <summary>
+        /// メインウィンドウ(プライマリパネル)がアクティブになったときに、サブパネルも
+        /// まとめて前面へ引き上げる。Windows では同時に複数のウィンドウをアクティブに
+        /// できないため、フォーカスは移動させず、Z オーダー上でプライマリの直下に
+        /// 並べ替えることで、パネルセット全体が他のアプリより手前に来るようにする。
+        /// </summary>
+        void BringChildPanelsToFront() {
+            if (IsSecondaryPanel || IsDisposed || Disposing || !IsHandleCreated)
+                return;
+
+            //直前のパネルの後ろへ順に挿入し、プライマリ→子1→子2... の並びを保つ
+            IntPtr insertAfter = Handle;
+            foreach (var child in _childPanels.ToArray()) {
+                if (child.IsDisposed || child.Disposing || !child.IsHandleCreated)
+                    continue;
+                //非表示・最小化中のパネルは引き上げない(自動非表示や手動最小化を尊重する)
+                if (!child.Visible || child.WindowState == FormWindowState.Minimized)
+                    continue;
+
+                WindowManagerMethods.SetWindowPos(child.Handle, insertAfter, 0, 0, 0, 0,
+                    WindowManagerMethods.SWP_NOMOVE | WindowManagerMethods.SWP_NOSIZE |
+                    WindowManagerMethods.SWP_NOACTIVATE);
+                insertAfter = child.Handle;
+
+                //パネルの移動に合わせて●インジケーターの Z オーダーも同期する
+                child.UpdateColorAlertIndicator();
+            }
+        }
+
+        /// <summary>
         /// Creates a secondary panel window bound to this panel's primary.
         /// The new panel clones the same source window as the primary and follows
         /// it when the primary switches to another window.
@@ -681,6 +710,9 @@ namespace OnTopReplicaColorAlert {
 
             //Restoring any panel brings back the whole panel set
             RestoreAllPanels();
+
+            //メインウィンドウのアクティブ化に追従して、サブパネルも一緒に前面へ出す
+            BringChildPanelsToFront();
 
             //前面化でインジケーターが下に潜ることがあるため Z オーダーを再同期する
             UpdateColorAlertIndicator();
