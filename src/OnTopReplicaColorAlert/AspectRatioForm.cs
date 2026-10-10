@@ -74,6 +74,15 @@ namespace OnTopReplicaColorAlert {
         /// Forces the form to update its height based on the current aspect ratio setting.
         /// </summary>
         public void RefreshAspectRatio() {
+            //最小化中の ClientSize は最小化枠の値(ほぼ 0)になっている。ここから高さを
+            //計算すると、WinForms が極小のサイズを「復元後のサイズ」として記録してしまい、
+            //元に戻したときにパネルが潰れる。通常表示に戻ってから計算し直す。
+            if (IsMinimizedWindow) {
+                _aspectRefreshPending = true;
+                return;
+            }
+            _aspectRefreshPending = false;
+
             int newWidth = ClientSize.Width;
             int newHeight = (int)((ClientSize.Width - ExtraPadding.Horizontal) / AspectRatio) + ExtraPadding.Vertical;
             
@@ -118,7 +127,42 @@ namespace OnTopReplicaColorAlert {
             }
         }
 
+        bool _aspectRefreshPending;
+        bool _aspectRefreshQueued;
+
+        /// <summary>
+        /// Gets whether the window is currently minimized. Also checks the native
+        /// state: a window minimized via ShowWindow is iconic before WinForms has
+        /// updated <see cref="Form.WindowState"/>.
+        /// </summary>
+        public bool IsMinimizedWindow {
+            get {
+                if (WindowState == FormWindowState.Minimized)
+                    return true;
+                return IsHandleCreated && WindowManagerMethods.IsIconic(Handle);
+            }
+        }
+
         #region Event overriding
+
+        protected override void OnSizeChanged(EventArgs e) {
+            base.OnSizeChanged(e);
+
+            //最小化中に保留したアスペクト比の再計算を、通常表示に戻ってから行う。
+            //復元処理(WM_SIZE)の途中でサイズを変えないよう、メッセージ処理後に回す。
+            if (_aspectRefreshPending && !_aspectRefreshQueued && !IsMinimizedWindow && IsHandleCreated) {
+                _aspectRefreshQueued = true;
+                BeginInvoke(new Action(() => {
+                    _aspectRefreshQueued = false;
+                    if (IsDisposed || !_aspectRefreshPending || IsMinimizedWindow)
+                        return;
+                    if (KeepAspectRatio)
+                        RefreshAspectRatio();
+                    else
+                        _aspectRefreshPending = false;
+                }));
+            }
+        }
 
         protected override void OnResizeEnd(EventArgs e) {
             base.OnResizeEnd(e);

@@ -19,6 +19,15 @@ namespace OnTopReplicaColorAlert {
 
         public ThumbnailPanel() {
             InitFormComponents();
+
+            _sourceSizeTimer.Tick += SourceSizeTimer_Tick;
+        }
+
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                _sourceSizeTimer.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
         private void InitFormComponents() {
@@ -233,6 +242,7 @@ namespace OnTopReplicaColorAlert {
 
             _thumbnail = null;
             _labelGlass.Visible = true;
+            UpdateSourceSizeTracking();
         }
 
         /// <summary>
@@ -276,6 +286,7 @@ namespace OnTopReplicaColorAlert {
                     }
 
                     _thumbnail.Update(target, source, ThumbnailOpacity, true, true);
+                    _lastSourceSize = bounds.Size;
                 }
                 catch (Exception ex) {
                     Log.WriteException("Thumbnail update failed, unsetting", ex);
@@ -283,6 +294,45 @@ namespace OnTopReplicaColorAlert {
                     UnsetThumbnail();
                     return;
                 }
+            }
+            UpdateSourceSizeTracking();
+        }
+
+        //A region anchored to the right/bottom border (or relative to all borders)
+        //moves inside the source when the source window is resized, but the DWM
+        //thumbnail keeps the source rectangle it was given: poll the source size
+        //and recompute the rectangle when it changes.
+        readonly Timer _sourceSizeTimer = new Timer { Interval = 500 };
+        Size _lastSourceSize;
+
+        /// <summary>
+        /// Starts or stops the source size polling, depending on the current region.
+        /// </summary>
+        private void UpdateSourceSizeTracking() {
+            bool track = _thumbnail != null && !_thumbnail.IsInvalid &&
+                _regionEnabled && _currentRegion != null && _currentRegion.DependsOnSourceSize;
+            if (_sourceSizeTimer.Enabled != track)
+                _sourceSizeTimer.Enabled = track;
+        }
+
+        private void SourceSizeTimer_Tick(object sender, EventArgs e) {
+            if (!IsShowingThumbnail) {
+                UpdateSourceSizeTracking();
+                return;
+            }
+
+            Size sourceSize;
+            try {
+                sourceSize = _thumbnail.GetSourceSize();
+            }
+            catch (Exception) {
+                //Source window going away: handled by the thumbnail owner
+                return;
+            }
+
+            if (sourceSize != _lastSourceSize) {
+                Log.Write("Source size changed from {0} to {1}, updating region {2}", _lastSourceSize, sourceSize, _currentRegion);
+                UpdateThubmnail();
             }
         }
 
@@ -449,7 +499,7 @@ namespace OnTopReplicaColorAlert {
 
             //Get real pixel region info
             Size source = ThumbnailPixelSize;
-            Point offset = (_regionEnabled) ? SelectedRegion.Offset : Point.Empty;
+            Point offset = (_regionEnabled) ? SelectedRegion.ComputeRegionRectangle(_thumbnail.GetSourceSize()).Location : Point.Empty;
 
             return new Point(
                 (int)((proportionalPosition.X * source.Width) + offset.X),

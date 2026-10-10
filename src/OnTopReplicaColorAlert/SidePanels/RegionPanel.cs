@@ -33,19 +33,66 @@ namespace OnTopReplicaColorAlert.SidePanels {
             labelCurrentRegion.Text = Strings.RegionsCurrentRegion;
             buttonReset.Text = Strings.RegionsResetButton;
             buttonDone.Text = Strings.RegionsDoneButton;
+            labelAnchor.Text = Strings.RegionsAnchor;
+
+            //Item order matches RegionAnchor, followed by the relative mode
+            try {
+                _ignoreValueChanges = true;
+                comboAnchor.Items.Clear();
+                comboAnchor.Items.AddRange(new object[] {
+                    Strings.RegionsAnchorTopLeft,
+                    Strings.RegionsAnchorTopCenter,
+                    Strings.RegionsAnchorTopRight,
+                    Strings.RegionsAnchorMiddleLeft,
+                    Strings.RegionsAnchorMiddleCenter,
+                    Strings.RegionsAnchorMiddleRight,
+                    Strings.RegionsAnchorBottomLeft,
+                    Strings.RegionsAnchorBottomCenter,
+                    Strings.RegionsAnchorBottomRight,
+                    Strings.RegionsAnchorRelative
+                });
+                comboAnchor.SelectedIndex = _modeIndex;
+            }
+            finally {
+                _ignoreValueChanges = false;
+            }
             UpdateRegionLabels();
 
             toolTip.SetToolTip(buttonSave, Strings.RegionsSaveButton);
             toolTip.SetToolTip(buttonDelete, Strings.RegionsDeleteButton);
+            toolTip.SetToolTip(comboAnchor, Strings.RegionsAnchorTT);
+            toolTip.SetToolTip(labelAnchor, Strings.RegionsAnchorTT);
 
             this.ResumeLayout();
         }
 
+        //Index of the anchor combo item representing the relative mode
+        //(the items before it are the RegionAnchor values)
+        const int RelativeModeIndex = (int)RegionAnchor.BottomRight + 1;
+
+        //Mode (anchor or relative) the values of the spinners are expressed in
+        int _modeIndex = (int)RegionAnchor.TopLeft;
+
+        static int GetModeIndex(ThumbnailRegion region) {
+            return region.Relative ? RelativeModeIndex : (int)region.Anchor;
+        }
+
         /// <summary>
-        /// Updates the labels for the region value selectors and the relative mode checkbox.
+        /// Switches a region to the mode of an anchor combo item, keeping it at the same place.
+        /// </summary>
+        static void SwitchToMode(ThumbnailRegion region, int modeIndex, Size sourceSize) {
+            if (modeIndex == RelativeModeIndex)
+                region.SwitchToRelative(sourceSize);
+            else
+                region.SwitchToAnchor((RegionAnchor)modeIndex, sourceSize);
+        }
+
+        /// <summary>
+        /// Updates the labels for the region value selectors and the anchor selector.
         /// </summary>
         private void UpdateRegionControls(ThumbnailRegion region) {
-            checkRelative.Checked = region.Relative;
+            _modeIndex = GetModeIndex(region);
+            comboAnchor.SelectedIndex = _modeIndex;
             
             if (region.Relative) {
                 Padding p = region.BoundsAsPadding;
@@ -69,17 +116,33 @@ namespace OnTopReplicaColorAlert.SidePanels {
         /// Updates the labels of region selectors based on the dialog's state.
         /// </summary>
         private void UpdateRegionLabels() {
-            if (checkRelative.Checked) {
+            if (_modeIndex == RelativeModeIndex) {
                 labelX.Text = Strings.RegionsLeft;
                 labelY.Text = Strings.RegionsTop;
                 labelWidth.Text = Strings.RegionsRight;
                 labelHeight.Text = Strings.RegionsBottom;
             }
             else {
-                labelX.Text = Strings.RegionsX;
-                labelY.Text = Strings.RegionsY;
+                //Anchored to the right/bottom: X/Y are the distances from that border;
+                //anchored to the center: X/Y are the displacements from the center
+                var anchor = (RegionAnchor)_modeIndex;
+                labelX.Text = GetOffsetLabel(ThumbnailRegion.GetHorizontalEdge(anchor),
+                    Strings.RegionsX, Strings.RegionsCenterX, Strings.RegionsRight);
+                labelY.Text = GetOffsetLabel(ThumbnailRegion.GetVerticalEdge(anchor),
+                    Strings.RegionsY, Strings.RegionsCenterY, Strings.RegionsBottom);
                 labelWidth.Text = Strings.RegionsWidth;
                 labelHeight.Text = Strings.RegionsHeight;
+            }
+        }
+
+        static string GetOffsetLabel(AnchorEdge edge, string start, string center, string end) {
+            switch (edge) {
+                case AnchorEdge.Center:
+                    return center;
+                case AnchorEdge.End:
+                    return end;
+                default:
+                    return start;
             }
         }
 
@@ -113,6 +176,11 @@ namespace OnTopReplicaColorAlert.SidePanels {
         }
 
         void ThumbnailPanel_RegionDrawn(object sender, ThumbnailRegion region) {
+            //Drawn regions are absolute from the top left corner: express them in
+            //the selected mode, so they follow the selected edges
+            if (ParentMainForm.ThumbnailPanel.IsShowingThumbnail) {
+                SwitchToMode(region, _modeIndex, ParentMainForm.ThumbnailPanel.ThumbnailOriginalSize);
+            }
             SetRegion(region);
         }
 
@@ -164,7 +232,7 @@ namespace OnTopReplicaColorAlert.SidePanels {
 
 				numX.Value = numY.Value = numW.Value = numH.Value = 0;
 				numX.Enabled = numY.Enabled = numW.Enabled = numH.Enabled = false;
-                checkRelative.Checked = false;
+                //The selected mode is kept: it applies to the next drawn region
                 UpdateRegionLabels();
 
 				buttonSave.Enabled = false;
@@ -189,7 +257,9 @@ namespace OnTopReplicaColorAlert.SidePanels {
                 Height = (int)numH.Value
             };
 
-            ThumbnailRegion newRegion = new ThumbnailRegion(bounds, checkRelative.Checked);
+            ThumbnailRegion newRegion = (_modeIndex == RelativeModeIndex) ?
+                new ThumbnailRegion(bounds, true) :
+                new ThumbnailRegion(bounds, (RegionAnchor)_modeIndex);
 
             return newRegion;
         }
@@ -297,17 +367,22 @@ namespace OnTopReplicaColorAlert.SidePanels {
             }
         }
 
-        private void CheckRelative_checked(object sender, EventArgs e) {
-            if (_ignoreValueChanges)
+        private void ComboAnchor_index_change(object sender, EventArgs e) {
+            if (_ignoreValueChanges || comboAnchor.SelectedIndex < 0 || comboAnchor.SelectedIndex == _modeIndex)
                 return;
 
-            //Get current region and switch mode
+            //No region (or no source to convert against): only change the mode
+            //used for the next region
+            if (!numX.Enabled || !ParentMainForm.ThumbnailPanel.IsShowingThumbnail) {
+                _modeIndex = comboAnchor.SelectedIndex;
+                UpdateRegionLabels();
+                return;
+            }
+
+            //Get current region (in the previous mode) and switch mode, keeping
+            //the region at the same place in the source window
             var region = ConstructCurrentRegion();
-            region.Relative = !region.Relative; //this must be reversed because the GUI has already switched state when calling ConstructCurrentRegion()
-            if (checkRelative.Checked)
-                region.SwitchToRelative(ParentMainForm.ThumbnailPanel.ThumbnailOriginalSize);
-            else
-                region.SwitchToAbsolute(ParentMainForm.ThumbnailPanel.ThumbnailOriginalSize);
+            SwitchToMode(region, comboAnchor.SelectedIndex, ParentMainForm.ThumbnailPanel.ThumbnailOriginalSize);
 
             //Update GUI
             SetRegion(region);

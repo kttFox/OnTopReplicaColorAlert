@@ -38,10 +38,43 @@ namespace OnTopReplicaColorAlert {
         /// </summary>
         public void NotifyPanelLayoutChanged() {
             var primary = _primaryPanel ?? this;
-            if (primary._suppressLayoutSave || primary.IsDisposed)
+            //A layout preview (hovering the layout history) only changes the panels temporarily
+            if (primary._suppressLayoutSave || primary.IsDisposed || _sessionEnding ||
+                PanelLayoutManager.IsPreviewActive)
                 return;
             PanelLayoutManager.Save(primary, primary._childPanels);
         }
+
+        /// <summary>
+        /// Runs a multi-step layout operation (re-attachment, restoration) without
+        /// saving the intermediate states, then saves once if the action reports a
+        /// change. Each step (thumbnail, region, chrome) otherwise saves on its own,
+        /// and an interruption between two steps would persist a half-applied layout.
+        /// </summary>
+        internal void RunWithoutLayoutSave(Func<bool> action) {
+            var primary = _primaryPanel ?? this;
+            bool wasSuppressed = primary._suppressLayoutSave;
+            bool changed = false;
+            primary._suppressLayoutSave = true;
+            try {
+                changed = action();
+            }
+            finally {
+                //Do not lift a suppression set meanwhile by shutdown
+                if (!wasSuppressed && !ApplicationExiting) {
+                    primary._suppressLayoutSave = false;
+                }
+            }
+            if (changed) {
+                primary.NotifyPanelLayoutChanged();
+            }
+        }
+
+        //Windows のシャットダウン・サインアウト中(WM_QUERYENDSESSION 受信後)は true。
+        //このとき WinForms は全パネルに終了イベントを送るため、通常のクローズ処理
+        //(プライマリの引き継ぎ・パネル削除の保存)が走ると、保存済みレイアウトから
+        //パネルが欠けてしまう。セッション終了中はレイアウトを一切書き換えない。
+        static bool _sessionEnding;
 
         /// <summary>
         /// Gets whether this window is a secondary panel added via "Add panel".
@@ -311,6 +344,8 @@ namespace OnTopReplicaColorAlert {
         internal void AutoHideAllPanels() {
             var primary = _primaryPanel ?? this;
             if (primary._autoHidden || primary.IsDisposed) return;
+            //A layout preview shows the panels on purpose (and restores the state after)
+            if (PanelLayoutManager.IsPreviewActive) return;
             //手動非表示や最小化と競合しないよう、表示中のみ対象とする
             if (!primary.Visible || primary.WindowState == FormWindowState.Minimized) return;
 
@@ -335,6 +370,7 @@ namespace OnTopReplicaColorAlert {
         internal void AutoShowAllPanels() {
             var primary = _primaryPanel ?? this;
             if (!primary._autoHidden || primary.IsDisposed) return;
+            if (PanelLayoutManager.IsPreviewActive) return;
 
             //SW_SHOWNOACTIVATE は最小化状態から元のサイズ・位置に
             //アクティブ化なしで復元する
@@ -440,10 +476,11 @@ namespace OnTopReplicaColorAlert {
         /// The new panel clones the same source window as the primary and follows
         /// it when the primary switches to another window.
         /// </summary>
-        public MainForm CreateChildPanel() {
+        public MainForm CreateChildPanel(bool activate = true) {
             var primary = _primaryPanel ?? this;
 
             var form = new MainForm(new StartupOptions.Options());
+            form._showWithoutActivation = !activate;
             form._primaryPanel = primary;
             primary._childPanels.Add(form);
             form.FormClosed += (s, args) => {
@@ -468,6 +505,12 @@ namespace OnTopReplicaColorAlert {
             primary.NotifyPanelLayoutChanged();
             return form;
         }
+
+        //True for panels created without taking the focus (e.g. by a layout preview
+        //while a menu is open: activating a window would close the menu)
+        bool _showWithoutActivation;
+
+        protected override bool ShowWithoutActivation => _showWithoutActivation;
 
         //Managers
         WindowListMenuManager _windowListManager;
@@ -569,6 +612,17 @@ namespace OnTopReplicaColorAlert {
             Log.Write("Main form closing");
             base.OnClosing(e);
 
+            //シャットダウン・サインアウト: アプリ終了と同じく現在のレイアウトを保持する。
+            //(ここでプライマリを引き継ぐと、引き継ぎ時の保存で閉じたパネルが消える)
+            //セッション終了がキャンセルされた場合に備え、パネルは動作可能なまま残す。
+            var closingArgs = e as FormClosingEventArgs;
+            if (closingArgs != null && closingArgs.CloseReason == CloseReason.WindowsShutDown) {
+                if (!_sessionEnding)
+                    Log.Write("Session ending: panel layout saving suspended");
+                _sessionEnding = true;
+                return;
+            }
+
             MainForm promoted = null;
             if (!IsSecondaryPanel) {
                 if (!ApplicationExiting && _childPanels.Count > 0) {
@@ -629,8 +683,12 @@ namespace OnTopReplicaColorAlert {
             }
             _childPanels.Clear();
 
-            //This form is closing: stop saving from here, let the new primary take over
+            //This form is closing: stop saving from here, let the new primary take over.
+            //The new primary was created as a secondary panel, whose flag is never
+            //cleared (only the primary's OnShown does): without this, no change would
+            //be saved anymore until the next launch, which then restores an old layout.
             _suppressLayoutSave = true;
+            newPrimary._suppressLayoutSave = false;
             Log.Write("Primary role promoted to another panel");
             PanelLayoutManager.StartWatcher(newPrimary);
             newPrimary.NotifyPanelLayoutChanged();
@@ -645,6 +703,11 @@ namespace OnTopReplicaColorAlert {
             //Minimizing the primary from the taskbar hides all secondary panels;
             //restoring it brings them all back.
             if (WindowState != _lastWindowState) {
+                //最小化中は保留していたレイアウト(位置・サイズ・枠)を、元に戻った後に適用する。
+                //復元処理(WM_SIZE)の途中で位置やサイズを変えないよう、メッセージ処理後に回す。
+                if (_lastWindowState == FormWindowState.Minimized && IsHandleCreated) {
+                    BeginInvoke(new Action(() => PanelLayoutManager.ApplyPendingLayout(this)));
+                }
                 _lastWindowState = WindowState;
                 //自動非表示による最小化/復元は AutoHide/AutoShowAllPanels 側で
                 //子パネルを処理済みのため、ここでは連動させない
@@ -688,6 +751,9 @@ namespace OnTopReplicaColorAlert {
 
         protected override void OnResizeEnd(EventArgs e) {
             base.OnResizeEnd(e);
+
+            //The user moved/resized the panel: this is the geometry to restore from now on
+            PanelLayoutManager.NotePanelGeometry(this);
 
             //Persist layout after a move/resize of any panel
             NotifyPanelLayoutChanged();
@@ -819,6 +885,14 @@ namespace OnTopReplicaColorAlert {
                         return;
                     }
                     break;
+
+                case WM.ENDSESSION:
+                    //wParam = 0: the session end was cancelled, the application keeps running
+                    if (m.WParam == IntPtr.Zero && _sessionEnding) {
+                        Log.Write("Session end cancelled: panel layout saving resumed");
+                        _sessionEnding = false;
+                    }
+                    break;
             }
 
             base.WndProc(ref m);
@@ -828,6 +902,13 @@ namespace OnTopReplicaColorAlert {
             //Reset region drawing state
             ThumbnailPanel.DrawMouseRegions = false;
             ThumbnailPanel.RegionDrawn -= _quickRegionDrawingHandler;
+
+            //Keep the mode of the current region (e.g. anchored to the bottom right
+            //corner), so a redrawn region keeps following the same edges
+            var current = SelectedThumbnailRegion;
+            if (current != null && ThumbnailPanel.IsShowingThumbnail) {
+                region.SwitchToModeOf(current, ThumbnailPanel.ThumbnailOriginalSize);
+            }
 
             SelectedThumbnailRegion = region;
         }
@@ -972,6 +1053,10 @@ namespace OnTopReplicaColorAlert {
         /// Fixes the form's position and size, ensuring it is fully displayed in the current screen.
         /// </summary>
         private void FixPositionAndSize() {
+            //最小化中の位置(-32000)・サイズで補正すると、復元先の座標が壊れる
+            if (IsMinimizedWindow)
+                return;
+
             var screen = Screen.FromControl(this);
 
             if (Width > screen.WorkingArea.Width) {

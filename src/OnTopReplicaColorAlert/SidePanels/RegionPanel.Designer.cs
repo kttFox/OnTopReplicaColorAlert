@@ -25,7 +25,8 @@
 		private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.groupRegions = new System.Windows.Forms.GroupBox();
-            this.checkRelative = new System.Windows.Forms.CheckBox();
+            this.labelAnchor = new System.Windows.Forms.Label();
+            this.comboAnchor = new System.Windows.Forms.ComboBox();
             this.textRegionName = new OnTopReplicaColorAlert.FocusedTextBox();
             this.numH = new System.Windows.Forms.NumericUpDown();
             this.numW = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +52,8 @@
             // 
             // groupRegions
             // 
-            this.groupRegions.Controls.Add(this.checkRelative);
+            this.groupRegions.Controls.Add(this.labelAnchor);
+            this.groupRegions.Controls.Add(this.comboAnchor);
             this.groupRegions.Controls.Add(this.textRegionName);
             this.groupRegions.Controls.Add(this.numH);
             this.groupRegions.Controls.Add(this.numW);
@@ -75,19 +77,28 @@
             this.groupRegions.TabStop = false;
             this.groupRegions.Text = "Regions:";
             // 
-            // checkRelative
+            // labelAnchor
             // 
-            this.checkRelative.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelAnchor.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.labelAnchor.Location = new System.Drawing.Point(7, 141);
+            this.labelAnchor.Name = "labelAnchor";
+            this.labelAnchor.Size = new System.Drawing.Size(76, 20);
+            this.labelAnchor.TabIndex = 13;
+            this.labelAnchor.Text = "Anchor:";
+            this.labelAnchor.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // comboAnchor
+            // 
+            this.comboAnchor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkRelative.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkRelative.Location = new System.Drawing.Point(7, 137);
-            this.checkRelative.Name = "checkRelative";
-            this.checkRelative.Size = new System.Drawing.Size(240, 21);
-            this.checkRelative.TabIndex = 12;
-            this.checkRelative.Text = "Relative to border";
-            this.checkRelative.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkRelative.UseVisualStyleBackColor = true;
-            this.checkRelative.CheckedChanged += new System.EventHandler(this.CheckRelative_checked);
+            this.comboAnchor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAnchor.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboAnchor.FormattingEnabled = true;
+            this.comboAnchor.Location = new System.Drawing.Point(90, 137);
+            this.comboAnchor.Name = "comboAnchor";
+            this.comboAnchor.Size = new System.Drawing.Size(157, 23);
+            this.comboAnchor.TabIndex = 12;
+            this.comboAnchor.SelectedIndexChanged += new System.EventHandler(this.ComboAnchor_index_change);
             // 
             // textRegionName
             // 
@@ -333,6 +344,7 @@
         private System.Windows.Forms.NumericUpDown numX;
         private FocusedTextBox textRegionName;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.CheckBox checkRelative;
+        private System.Windows.Forms.Label labelAnchor;
+        private System.Windows.Forms.ComboBox comboAnchor;
 	}
 }

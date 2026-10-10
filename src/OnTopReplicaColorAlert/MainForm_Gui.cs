@@ -36,6 +36,19 @@ namespace OnTopReplicaColorAlert {
                 return;
 
             bool shouldBeTopMost = (CurrentThumbnailWindowHandle != null);
+
+            //Panels shown without activation (layout preview while a menu is open):
+            //the TopMost setter activates the window, which would close the menu
+            if (_showWithoutActivation && IsHandleCreated) {
+                Native.WindowManagerMethods.SetWindowPos(Handle,
+                    shouldBeTopMost ? Native.WindowManagerMethods.HWND_TOPMOST : Native.WindowManagerMethods.HWND_NOTOPMOST,
+                    0, 0, 0, 0,
+                    Native.WindowManagerMethods.SWP_NOMOVE | Native.WindowManagerMethods.SWP_NOSIZE |
+                    Native.WindowManagerMethods.SWP_NOACTIVATE);
+                UpdateColorAlertIndicator();
+                return;
+            }
+
             if (TopMost != shouldBeTopMost) {
                 TopMost = shouldBeTopMost;
             }

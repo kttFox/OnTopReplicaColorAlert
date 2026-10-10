@@ -948,6 +948,132 @@ namespace OnTopReplicaColorAlert {
         }
         
         /// <summary>
+        ///   Anchor: に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchor {
+            get {
+                return ResourceManager.GetString("RegionsAnchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Top left に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorTopLeft {
+            get {
+                return ResourceManager.GetString("RegionsAnchorTopLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Top right に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorTopRight {
+            get {
+                return ResourceManager.GetString("RegionsAnchorTopRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Bottom left に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorBottomLeft {
+            get {
+                return ResourceManager.GetString("RegionsAnchorBottomLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Bottom right に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorBottomRight {
+            get {
+                return ResourceManager.GetString("RegionsAnchorBottomRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Top center に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorTopCenter {
+            get {
+                return ResourceManager.GetString("RegionsAnchorTopCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Middle left に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorMiddleLeft {
+            get {
+                return ResourceManager.GetString("RegionsAnchorMiddleLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Center に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorMiddleCenter {
+            get {
+                return ResourceManager.GetString("RegionsAnchorMiddleCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Middle right に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorMiddleRight {
+            get {
+                return ResourceManager.GetString("RegionsAnchorMiddleRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Bottom center に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorBottomCenter {
+            get {
+                return ResourceManager.GetString("RegionsAnchorBottomCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Center X に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsCenterX {
+            get {
+                return ResourceManager.GetString("RegionsCenterX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Center Y に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsCenterY {
+            get {
+                return ResourceManager.GetString("RegionsCenterY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   All borders (stretch) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorRelative {
+            get {
+                return ResourceManager.GetString("RegionsAnchorRelative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Edge of the source window the region follows when the window is resized. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RegionsAnchorTT {
+            get {
+                return ResourceManager.GetString("RegionsAnchorTT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Bottom に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string RegionsBottom {
@@ -1188,6 +1314,168 @@ namespace OnTopReplicaColorAlert {
         internal static string SettingsTitle {
             get {
                 return ResourceManager.GetString("SettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Layout history に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistory {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Save the current panel layout, or go back to a previous one. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistoryTT {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistoryTT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Save current layout... に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistorySave {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistorySave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Adds the current layout of all panels to the history. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistorySaveTT {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistorySaveTT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   (No history) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistoryEmpty {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistoryEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Restore this layout に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistoryRestore {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistoryRestore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Open history folder に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string MenuLayoutHistoryOpenFolder {
+            get {
+                return ResourceManager.GetString("MenuLayoutHistoryOpenFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   At startup に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistoryKindStartup {
+            get {
+                return ResourceManager.GetString("LayoutHistoryKindStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Before restore に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistoryKindBeforeRestore {
+            get {
+                return ResourceManager.GetString("LayoutHistoryKindBeforeRestore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Saved に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistoryKindManual {
+            get {
+                return ResourceManager.GetString("LayoutHistoryKindManual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}  {1} ({2} panels) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistoryEntryFormat {
+            get {
+                return ResourceManager.GetString("LayoutHistoryEntryFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Save layout に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistorySaveTitle {
+            get {
+                return ResourceManager.GetString("LayoutHistorySaveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Name of this layout (optional): に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string LayoutHistorySavePrompt {
+            get {
+                return ResourceManager.GetString("LayoutHistorySavePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Go back to this layout? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ConfirmRestoreLayout {
+            get {
+                return ResourceManager.GetString("ConfirmRestoreLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Unable to save the layout to the history. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrorLayoutHistorySave {
+            get {
+                return ResourceManager.GetString("ErrorLayoutHistorySave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Unable to restore the selected layout. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrorLayoutHistoryRestore {
+            get {
+                return ResourceManager.GetString("ErrorLayoutHistoryRestore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OK に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DialogOK {
+            get {
+                return ResourceManager.GetString("DialogOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DialogCancel {
+            get {
+                return ResourceManager.GetString("DialogCancel", resourceCulture);
             }
         }
     }

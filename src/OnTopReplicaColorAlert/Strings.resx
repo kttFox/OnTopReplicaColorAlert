@@ -504,4 +504,104 @@ To return to normal mode, use the disable command in the menu of the OnTopReplic
   <data name="ColorAlert_SamplingInProgress" xml:space="preserve">
     <value>Click anywhere...</value>
   </data>
+  <data name="MenuLayoutHistory" xml:space="preserve">
+    <value>Layout history</value>
+  </data>
+  <data name="MenuLayoutHistoryTT" xml:space="preserve">
+    <value>Save the current panel layout, or go back to a previous one.</value>
+  </data>
+  <data name="MenuLayoutHistorySave" xml:space="preserve">
+    <value>Save current layout...</value>
+  </data>
+  <data name="MenuLayoutHistorySaveTT" xml:space="preserve">
+    <value>Adds the current layout of all panels to the history.</value>
+  </data>
+  <data name="MenuLayoutHistoryEmpty" xml:space="preserve">
+    <value>(No history)</value>
+  </data>
+  <data name="MenuLayoutHistoryRestore" xml:space="preserve">
+    <value>Restore this layout</value>
+  </data>
+  <data name="MenuLayoutHistoryOpenFolder" xml:space="preserve">
+    <value>Open history folder</value>
+  </data>
+  <data name="LayoutHistoryKindStartup" xml:space="preserve">
+    <value>At startup</value>
+  </data>
+  <data name="LayoutHistoryKindBeforeRestore" xml:space="preserve">
+    <value>Before restore</value>
+  </data>
+  <data name="LayoutHistoryKindManual" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="LayoutHistoryEntryFormat" xml:space="preserve">
+    <value>{0}  {1} ({2} panels)</value>
+  </data>
+  <data name="LayoutHistorySaveTitle" xml:space="preserve">
+    <value>Save layout</value>
+  </data>
+  <data name="LayoutHistorySavePrompt" xml:space="preserve">
+    <value>Name of this layout (optional):</value>
+  </data>
+  <data name="ConfirmRestoreLayout" xml:space="preserve">
+    <value>Go back to this layout?
+
+{0}
+
+All current panels will be replaced. The current layout is kept in the history.</value>
+  </data>
+  <data name="ErrorLayoutHistorySave" xml:space="preserve">
+    <value>Unable to save the layout to the history.</value>
+  </data>
+  <data name="ErrorLayoutHistoryRestore" xml:space="preserve">
+    <value>Unable to restore the selected layout.</value>
+  </data>
+  <data name="DialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RegionsAnchor" xml:space="preserve">
+    <value>Anchor:</value>
+  </data>
+  <data name="RegionsAnchorTopLeft" xml:space="preserve">
+    <value>Top left</value>
+  </data>
+  <data name="RegionsAnchorTopRight" xml:space="preserve">
+    <value>Top right</value>
+  </data>
+  <data name="RegionsAnchorBottomLeft" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="RegionsAnchorBottomRight" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
+  <data name="RegionsAnchorTopCenter" xml:space="preserve">
+    <value>Top center</value>
+  </data>
+  <data name="RegionsAnchorMiddleLeft" xml:space="preserve">
+    <value>Middle left</value>
+  </data>
+  <data name="RegionsAnchorMiddleCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="RegionsAnchorMiddleRight" xml:space="preserve">
+    <value>Middle right</value>
+  </data>
+  <data name="RegionsAnchorBottomCenter" xml:space="preserve">
+    <value>Bottom center</value>
+  </data>
+  <data name="RegionsCenterX" xml:space="preserve">
+    <value>Center X</value>
+  </data>
+  <data name="RegionsCenterY" xml:space="preserve">
+    <value>Center Y</value>
+  </data>
+  <data name="RegionsAnchorRelative" xml:space="preserve">
+    <value>All borders (stretch)</value>
+  </data>
+  <data name="RegionsAnchorTT" xml:space="preserve">
+    <value>Edge of the source window the region follows when the window is resized.</value>
+  </data>
 </root>

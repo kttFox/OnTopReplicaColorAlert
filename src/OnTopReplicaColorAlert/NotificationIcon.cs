@@ -41,6 +41,8 @@ namespace OnTopReplicaColorAlert {
                     ToolTipText = Strings.MenuOpenTT,
                 },
                 _windowsItem,
+                //Also usable while the panels are hidden, minimized or off-screen
+                LayoutHistoryMenu.Create(() => Form),
                 new ToolStripMenuItem(Strings.MenuDisableClickThroughAll, null, TaskIconDisableClickThrough_click) {
                     ToolTipText = Strings.MenuDisableClickThroughAllTT
                 },

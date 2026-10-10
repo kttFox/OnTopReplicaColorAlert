@@ -500,4 +500,104 @@ You must run this application on Windows Vista Home Premium or better.</value>
   <data name="ColorAlert_SamplingInProgress" xml:space="preserve">
     <value>クリックして選択...</value>
   </data>
+  <data name="MenuLayoutHistory" xml:space="preserve">
+    <value>レイアウト履歴</value>
+  </data>
+  <data name="MenuLayoutHistoryTT" xml:space="preserve">
+    <value>現在のパネル配置を保存したり、以前の配置に戻したりします。</value>
+  </data>
+  <data name="MenuLayoutHistorySave" xml:space="preserve">
+    <value>現在のレイアウトを保存...</value>
+  </data>
+  <data name="MenuLayoutHistorySaveTT" xml:space="preserve">
+    <value>すべてのパネルの現在の配置を履歴に追加します。</value>
+  </data>
+  <data name="MenuLayoutHistoryEmpty" xml:space="preserve">
+    <value>(履歴はありません)</value>
+  </data>
+  <data name="MenuLayoutHistoryRestore" xml:space="preserve">
+    <value>このレイアウトに戻す</value>
+  </data>
+  <data name="MenuLayoutHistoryOpenFolder" xml:space="preserve">
+    <value>履歴フォルダーを開く</value>
+  </data>
+  <data name="LayoutHistoryKindStartup" xml:space="preserve">
+    <value>起動時</value>
+  </data>
+  <data name="LayoutHistoryKindBeforeRestore" xml:space="preserve">
+    <value>復元前</value>
+  </data>
+  <data name="LayoutHistoryKindManual" xml:space="preserve">
+    <value>手動保存</value>
+  </data>
+  <data name="LayoutHistoryEntryFormat" xml:space="preserve">
+    <value>{0}  {1} ({2} パネル)</value>
+  </data>
+  <data name="LayoutHistorySaveTitle" xml:space="preserve">
+    <value>レイアウトを保存</value>
+  </data>
+  <data name="LayoutHistorySavePrompt" xml:space="preserve">
+    <value>このレイアウトの名前(省略可):</value>
+  </data>
+  <data name="ConfirmRestoreLayout" xml:space="preserve">
+    <value>このレイアウトに戻しますか?
+
+{0}
+
+現在のパネルはすべて置き換えられます。現在のレイアウトは履歴に残ります。</value>
+  </data>
+  <data name="ErrorLayoutHistorySave" xml:space="preserve">
+    <value>レイアウトを履歴に保存できませんでした。</value>
+  </data>
+  <data name="ErrorLayoutHistoryRestore" xml:space="preserve">
+    <value>選択したレイアウトを復元できませんでした。</value>
+  </data>
+  <data name="DialogOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="RegionsAnchor" xml:space="preserve">
+    <value>基準位置:</value>
+  </data>
+  <data name="RegionsAnchorTopLeft" xml:space="preserve">
+    <value>左上</value>
+  </data>
+  <data name="RegionsAnchorTopRight" xml:space="preserve">
+    <value>右上</value>
+  </data>
+  <data name="RegionsAnchorBottomLeft" xml:space="preserve">
+    <value>左下</value>
+  </data>
+  <data name="RegionsAnchorBottomRight" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="RegionsAnchorTopCenter" xml:space="preserve">
+    <value>上中央</value>
+  </data>
+  <data name="RegionsAnchorMiddleLeft" xml:space="preserve">
+    <value>左中央</value>
+  </data>
+  <data name="RegionsAnchorMiddleCenter" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="RegionsAnchorMiddleRight" xml:space="preserve">
+    <value>右中央</value>
+  </data>
+  <data name="RegionsAnchorBottomCenter" xml:space="preserve">
+    <value>下中央</value>
+  </data>
+  <data name="RegionsCenterX" xml:space="preserve">
+    <value>中央X</value>
+  </data>
+  <data name="RegionsCenterY" xml:space="preserve">
+    <value>中央Y</value>
+  </data>
+  <data name="RegionsAnchorRelative" xml:space="preserve">
+    <value>四辺からの距離(伸縮)</value>
+  </data>
+  <data name="RegionsAnchorTT" xml:space="preserve">
+    <value>対象のウィンドウのサイズが変わったとき、領域が追従する基準の位置です。</value>
+  </data>
 </root>

@@ -56,7 +56,7 @@ namespace OnTopReplicaColorAlert {
             var xRectangle = xmlRegion.Element("Rectangle");
             if (xRectangle != null) {
                 System.Drawing.Rectangle rectangle = ParseRectangle(xRectangle);
-                return new ThumbnailRegion(rectangle);
+                return new ThumbnailRegion(rectangle, ParseAnchor(xRectangle));
             }
 
             var xPadding = xmlRegion.Element("Padding");
@@ -66,6 +66,14 @@ namespace OnTopReplicaColorAlert {
             }
 
             return null;
+        }
+
+        private RegionAnchor ParseAnchor(XElement xRectangle) {
+            var xAnchor = xRectangle.Attribute("anchor");
+            RegionAnchor anchor;
+            if (xAnchor != null && Enum.TryParse(xAnchor.Value, false, out anchor) && Enum.IsDefined(typeof(RegionAnchor), anchor))
+                return anchor;
+            return RegionAnchor.TopLeft;
         }
 
         private System.Windows.Forms.Padding ParsePadding(XElement xPadding) {
@@ -118,7 +126,9 @@ namespace OnTopReplicaColorAlert {
 
         private void WriteAbsoluteRegion(XmlWriter writer, StoredRegion region) {
             writer.WriteStartElement("Rectangle");
-            
+            if (region.Region.Anchor != RegionAnchor.TopLeft)
+                writer.WriteAttributeString("anchor", region.Region.Anchor.ToString());
+
             var bounds = region.Region.Bounds;
             writer.WriteElementString("X", bounds.X.ToString());
             writer.WriteElementString("Y", bounds.Y.ToString());

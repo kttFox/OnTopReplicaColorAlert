@@ -35,10 +35,30 @@ OnTopReplicaColorAlert started as a fork of [OnTopReplica](https://github.com/Lo
   * The target window is always kept in sync with the main (primary) panel.
   * Monitored region, color-alert settings, opacity, and window frame visibility are independent per panel.
 
+### Region anchor
+
+* The **"Anchor"** selector of the Region side panel chooses, per panel, which point of the target window the monitored region is anchored to (default: top left).
+  * Nine anchors are available: the four corners (top left / top right / bottom left / bottom right), the middle of each border (top center / middle left / middle right / bottom center) and the **center**.
+  * With any anchor other than top left, the region keeps its size and its distance from the anchor when the target window is resized (useful to monitor e.g. a status indicator in the bottom right corner of a window, or a dialog shown in the center).
+  * With a right/bottom anchor, the X / Y fields are the distances between the right/bottom border of the target window and the right/bottom border of the region.
+  * With a centered anchor, the X / Y fields ("Center X" / "Center Y") are the displacement of the region's center from the center of the target window (positive towards the right/bottom).
+  * **All borders (stretch)** is the former "Relative to border" mode: the region stretches with the window.
+  * Switching the anchor keeps the region at its current place. The anchor is saved in the panel layout and in stored regions, and is kept when the region is redrawn with Ctrl + drag.
+
 ### Automatic layout save & restore
 
 * The panel layout (target window, position, size, frame visibility, monitored region, color-alert settings) is **saved immediately on every change** and all panels are restored at the next startup (`PanelLayout.txt` in the same folder as the executable).
 * A resident watcher monitors the target window even if it is not yet running, and **automatically reconnects when it starts later** (the same applies if the target exits and restarts during a session).
+
+### Layout history
+
+* The **"Layout history"** submenu of the tray icon menu brings back a previous panel layout.
+  * **"Save current layout..."** stores the current layout in the history under an optional name.
+  * Hovering an entry previews it on the current panels (position, size, monitored region, frame); moving away or closing the menu puts them back. Minimized or hidden panels are shown for the preview and hidden again afterwards. During the preview the color detection is paused and nothing is saved.
+  * The layout loaded at startup is added to the history automatically (unless it is identical to the newest entry), so a layout that got broken can be rolled back to the previous startup.
+  * The layout replaced by a restore is saved as "Before restore", so a restore can be undone.
+  * The history is stored in the `PanelLayoutHistory` folder next to the executable (the newest 20 automatic and 50 saved entries are kept).
+  * To remove an entry, delete its file in the `PanelLayoutHistory` folder (use "Open history folder" in the menu).
 
 ### Color-alert enhancements
 

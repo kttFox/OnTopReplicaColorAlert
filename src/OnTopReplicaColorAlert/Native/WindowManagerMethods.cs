@@ -36,6 +36,10 @@ namespace OnTopReplicaColorAlert.Native {
         public static extern bool IsWindow(IntPtr hWnd);
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool IsIconic(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
 
         [DllImport("user32.dll")]
@@ -119,6 +123,7 @@ namespace OnTopReplicaColorAlert.Native {
         public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        public static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
 
         public const uint SWP_NOSIZE = 0x0001;
         public const uint SWP_NOMOVE = 0x0002;

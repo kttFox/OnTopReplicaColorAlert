@@ -4,5 +4,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="OnTopReplicaColorAlert/OnTopReplicaColorAlert.csproj" />
+  <Project Path="src/OnTopReplicaColorAlert/OnTopReplicaColorAlert.csproj" />
 </Solution>

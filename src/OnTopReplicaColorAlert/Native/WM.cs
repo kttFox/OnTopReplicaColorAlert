@@ -26,5 +26,7 @@ namespace OnTopReplicaColorAlert.Native {
         public const int SYSCOMMAND = 0x0112;
         public const int GETTEXT = 0x000D;
         public const int GETTEXTLENGTH = 0x000E;
+        public const int QUERYENDSESSION = 0x0011;
+        public const int ENDSESSION = 0x0016;
     }
 }
